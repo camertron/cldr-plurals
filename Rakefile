@@ -6,7 +6,7 @@ require 'bundler'
 require 'rspec/core/rake_task'
 require 'rubygems/package_task'
 
-require './lib/cldr-plurals-compiler'
+require './lib/cldr-plurals'
 
 Bundler::GemHelper.install_tasks
 

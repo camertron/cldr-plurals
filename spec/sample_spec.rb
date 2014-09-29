@@ -3,9 +3,8 @@
 require 'yaml'
 require 'spec_helper'
 
-require 'cldr-plurals-compiler/ruby_runtime'
-
-include CldrPluralsCompiler
+include CldrPlurals::Compiler
+include CldrPlurals::Ruby
 
 describe 'samples' do
   samples_file = File.join(File.expand_path(File.dirname(__FILE__)), 'samples.yml')
