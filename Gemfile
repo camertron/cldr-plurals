@@ -5,6 +5,7 @@ gemspec
 group :development, :test do
   gem 'pry-nav'
   gem 'rake'
+  gem 'nokogiri'
 end
 
 group :test do

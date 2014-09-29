@@ -75,7 +75,7 @@ module CldrPluralsCompiler
     def operand
       token = current_token
       consume!(:operand)
-      token.value
+      Operand.new(token.value)
     end
 
     def operator

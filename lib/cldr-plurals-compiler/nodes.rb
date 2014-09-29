@@ -3,6 +3,7 @@
 module CldrPluralsCompiler
   class Rule
     attr_reader :root
+    attr_accessor :name
 
     def initialize(root)
       @root = root
@@ -66,6 +67,14 @@ module CldrPluralsCompiler
   end
 
   class Operator
+    attr_reader :symbol
+
+    def initialize(symbol)
+      @symbol = symbol
+    end
+  end
+
+  class Operand
     attr_reader :symbol
 
     def initialize(symbol)

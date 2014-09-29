@@ -11,28 +11,19 @@ module CldrPluralsCompiler
 
     def initialize(locale)
       @locale = locale
-      @rules = {}
+      @rules = []
     end
 
     def add_rule(name, rule_string)
-      rules[name] = Parser.new(
-        Tokenizer.tokenize(rule_string)
-      ).parse
+      rule = Parser.new(Tokenizer.tokenize(rule_string)).parse
+      rule.name = name
+      rules << rule
       nil
     end
 
-    def each_in(prog_lang)
-      if block_given?
-        emitter = find_emitter(prog_lang)
-
-        rules.each_pair do |name, rule|
-          yield name, emitter.emit_rule(rule)
-        end
-
-        nil
-      else
-        to_enum(__method__, prog_lang)
-      end
+    def to_code(prog_lang)
+      emitter = find_emitter(prog_lang)
+      emitter.emit_rules(self)
     end
 
     private
@@ -47,9 +38,5 @@ module CldrPluralsCompiler
         raise ArgumentError, "emitter '#{const_name}' not found."
       end
     end
-  end
-
-  def self.create(locale)
-    RuleList.new(locale)
   end
 end
