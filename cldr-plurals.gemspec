@@ -1,8 +1,8 @@
 $:.unshift File.join(File.dirname(__FILE__), 'lib')
-require 'cldr-plurals/version'  
+require 'cldr-plurals/version'
 
 Gem::Specification.new do |s|
-  s.name     = "cldr-plurals-compiler"
+  s.name     = "cldr-plurals"
   s.version  = ::CldrPlurals::VERSION
   s.authors  = ["Cameron Dutro"]
   s.email    = ["camertron@gmail.com"]

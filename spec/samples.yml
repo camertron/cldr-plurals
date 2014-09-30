@@ -1,6 +1,7 @@
 ---
 bm/bo/dz/id/ig/ii/in/ja/jbo/jv/jw/kde/kea/km/ko/lkt/lo/ms/my/nqo/root/sah/ses/sg/th/to/vi/wo/yo/zh:
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -50,7 +51,8 @@ bm/bo/dz/id/ig/ii/in/ja/jbo/jv/jw/kde/kea/km/ko/lkt/lo/ms/my/nqo/root/sah/ses/sg
     - '100000.0'
     - '1000000.0'
 am/bn/fa/gu/hi/kn/mr/zu:
-- :rule: i = 0 or n = 1
+- :text: i = 0 or n = 1
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -74,7 +76,8 @@ am/bn/fa/gu/hi/kn/mr/zu:
     - '0.02'
     - '0.03'
     - '0.04'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -124,7 +127,8 @@ am/bn/fa/gu/hi/kn/mr/zu:
     - '100000.0'
     - '1000000.0'
 ff/fr/hy/kab:
-- :rule: i = 0,1
+- :text: i = 0,1
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -148,7 +152,8 @@ ff/fr/hy/kab:
     - '1.3'
     - '1.4'
     - '1.5'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -198,12 +203,14 @@ ff/fr/hy/kab:
     - '100000.0'
     - '1000000.0'
 ast/ca/de/en/et/fi/fy/gl/it/ji/nl/sv/sw/ur/yi:
-- :rule: i = 1 and v = 0
+- :text: i = 1 and v = 0
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
     - '1'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -253,7 +260,8 @@ ast/ca/de/en/et/fi/fy/gl/it/ji/nl/sv/sw/ur/yi:
     - '100000.0'
     - '1000000.0'
 si:
-- :rule: n = 0,1 or i = 0 and f = 1
+- :text: n = 0,1 or i = 0 and f = 1
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -273,7 +281,8 @@ si:
     - '0.0000'
     - '0.0001'
     - '1.0000'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -323,7 +332,8 @@ si:
     - '100000.0'
     - '1000000.0'
 ak/bh/guw/ln/mg/nso/pa/ti/wa:
-- :rule: n = 0..1
+- :text: n = 0..1
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -339,7 +349,8 @@ ak/bh/guw/ln/mg/nso/pa/ti/wa:
     - '1.000'
     - '0.0000'
     - '1.0000'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -389,7 +400,8 @@ ak/bh/guw/ln/mg/nso/pa/ti/wa:
     - '100000.0'
     - '1000000.0'
 tzm:
-- :rule: n = 0..1 or n = 11..99
+- :text: n = 0..1 or n = 11..99
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -427,7 +439,8 @@ tzm:
     - '22.0'
     - '23.0'
     - '24.0'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -476,7 +489,8 @@ tzm:
     - '100000.0'
     - '1000000.0'
 pt:
-- :rule: n = 0..2 and n != 2
+- :text: n = 0..2 and n != 2
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -492,7 +506,8 @@ pt:
     - '1.000'
     - '0.0000'
     - '1.0000'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -542,7 +557,8 @@ pt:
     - '100000.0'
     - '1000000.0'
 ? af/asa/az/bem/bez/bg/brx/cgg/chr/ckb/dv/ee/el/eo/es/eu/fo/fur/gsw/ha/haw/hu/jgo/jmc/ka/kaj/kcg/kk/kkj/kl/ks/ksb/ku/ky/lb/lg/mas/mgo/ml/mn/nah/nb/nd/ne/nn/nnh/no/nr/ny/nyn/om/or/os/pap/ps/rm/rof/rwk/saq/seh/sn/so/sq/ss/ssy/st/syr/ta/te/teo/tig/tk/tn/tr/ts/ug/uz/ve/vo/vun/wae/xh/xog
-: - :rule: n = 1
+: - :text: n = 1
+    :name: :one
     :samples:
     - :type: '@integer'
       :samples:
@@ -553,7 +569,8 @@ pt:
       - '1.00'
       - '1.000'
       - '1.0000'
-  - :rule: ''
+  - :text: ''
+    :name: :other
     :samples:
     - :type: '@integer'
       :samples:
@@ -603,12 +620,14 @@ pt:
       - '100000.0'
       - '1000000.0'
 pt_PT:
-- :rule: n = 1 and v = 0
+- :text: n = 1 and v = 0
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
     - '1'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -658,7 +677,8 @@ pt_PT:
     - '100000.0'
     - '1000000.0'
 da:
-- :rule: n = 1 or t != 0 and i = 0,1
+- :text: n = 1 or t != 0 and i = 0,1
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -681,7 +701,8 @@ da:
     - '1.4'
     - '1.5'
     - '1.6'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -731,7 +752,8 @@ da:
     - '100000.0'
     - '1000000.0'
 is:
-- :rule: t = 0 and i % 10 = 1 and i % 100 != 11 or t != 0
+- :text: t = 0 and i % 10 = 1 and i % 100 != 11 or t != 0
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -766,7 +788,8 @@ is:
     - '10.1'
     - '100.1'
     - '1000.1'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -808,7 +831,8 @@ is:
     - '100000.0'
     - '1000000.0'
 mk:
-- :rule: v = 0 and i % 10 = 1 or f % 10 = 1
+- :text: v = 0 and i % 10 = 1 or f % 10 = 1
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -835,7 +859,8 @@ mk:
     - '10.1'
     - '100.1'
     - '1000.1'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -885,8 +910,9 @@ mk:
     - '100000.0'
     - '1000000.0'
 fil/tl:
-- :rule: v = 0 and i = 1,2,3 or v = 0 and i % 10 != 4,6,9 or v != 0 and f % 10 !=
+- :text: v = 0 and i = 1,2,3 or v = 0 and i % 10 != 4,6,9 or v != 0 and f % 10 !=
     4,6,9
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -935,7 +961,8 @@ fil/tl:
     - '10000.0'
     - '100000.0'
     - '1000000.0'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -963,7 +990,8 @@ fil/tl:
     - '100.4'
     - '1000.4'
 lv/prg:
-- :rule: n % 10 = 0 or n % 100 = 11..19 or v = 2 and f % 100 = 11..19
+- :text: n % 10 = 0 or n % 100 = 11..19 or v = 2 and f % 100 = 11..19
+  :name: :zero
   :samples:
   - :type: '@integer'
     :samples:
@@ -1003,8 +1031,9 @@ lv/prg:
     - '10000.0'
     - '100000.0'
     - '1000000.0'
-- :rule: n % 10 = 1 and n % 100 != 11 or v = 2 and f % 10 = 1 and f % 100 != 11 or
+- :text: n % 10 = 1 and n % 100 != 11 or v = 2 and f % 10 = 1 and f % 100 != 11 or
     v != 2 and f % 10 = 1
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -1032,7 +1061,8 @@ lv/prg:
     - '10.1'
     - '100.1'
     - '1000.1'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -1076,7 +1106,8 @@ lv/prg:
     - '100.2'
     - '1000.2'
 lag:
-- :rule: n = 0
+- :text: n = 0
+  :name: :zero
   :samples:
   - :type: '@integer'
     :samples:
@@ -1087,7 +1118,8 @@ lag:
     - '0.00'
     - '0.000'
     - '0.0000'
-- :rule: i = 0,1 and n != 0
+- :text: i = 0,1 and n != 0
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -1110,7 +1142,8 @@ lag:
     - '1.4'
     - '1.5'
     - '1.6'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -1160,7 +1193,8 @@ lag:
     - '100000.0'
     - '1000000.0'
 ksh:
-- :rule: n = 0
+- :text: n = 0
+  :name: :zero
   :samples:
   - :type: '@integer'
     :samples:
@@ -1171,7 +1205,8 @@ ksh:
     - '0.00'
     - '0.000'
     - '0.0000'
-- :rule: n = 1
+- :text: n = 1
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -1182,7 +1217,8 @@ ksh:
     - '1.00'
     - '1.000'
     - '1.0000'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -1232,7 +1268,8 @@ ksh:
     - '100000.0'
     - '1000000.0'
 iu/kw/naq/se/sma/smi/smj/smn/sms:
-- :rule: n = 1
+- :text: n = 1
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -1243,7 +1280,8 @@ iu/kw/naq/se/sma/smi/smj/smn/sms:
     - '1.00'
     - '1.000'
     - '1.0000'
-- :rule: n = 2
+- :text: n = 2
+  :name: :two
   :samples:
   - :type: '@integer'
     :samples:
@@ -1254,7 +1292,8 @@ iu/kw/naq/se/sma/smi/smj/smn/sms:
     - '2.00'
     - '2.000'
     - '2.0000'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -1304,7 +1343,8 @@ iu/kw/naq/se/sma/smi/smj/smn/sms:
     - '100000.0'
     - '1000000.0'
 shi:
-- :rule: i = 0 or n = 1
+- :text: i = 0 or n = 1
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -1328,7 +1368,8 @@ shi:
     - '0.02'
     - '0.03'
     - '0.04'
-- :rule: n = 2..10
+- :text: n = 2..10
+  :name: :few
   :samples:
   - :type: '@integer'
     :samples:
@@ -1359,7 +1400,8 @@ shi:
     - '6.00'
     - '7.00'
     - '8.00'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -1409,12 +1451,14 @@ shi:
     - '100000.0'
     - '1000000.0'
 mo/ro:
-- :rule: i = 1 and v = 0
+- :text: i = 1 and v = 0
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
     - '1'
-- :rule: v != 0 or n = 0 or n != 1 and n % 100 = 1..19
+- :text: v != 0 or n = 0 or n != 1 and n % 100 = 1..19
+  :name: :few
   :samples:
   - :type: '@integer'
     :samples:
@@ -1460,7 +1504,8 @@ mo/ro:
     - '10000.0'
     - '100000.0'
     - '1000000.0'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -1486,7 +1531,8 @@ mo/ro:
     - '100000'
     - '1000000'
 bs/hr/sh/sr:
-- :rule: v = 0 and i % 10 = 1 and i % 100 != 11 or f % 10 = 1 and f % 100 != 11
+- :text: v = 0 and i % 10 = 1 and i % 100 != 11 or f % 10 = 1 and f % 100 != 11
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -1513,8 +1559,9 @@ bs/hr/sh/sr:
     - '10.1'
     - '100.1'
     - '1000.1'
-- :rule: v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100
+- :text: v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100
     != 12..14
+  :name: :few
   :samples:
   - :type: '@integer'
     :samples:
@@ -1557,7 +1604,8 @@ bs/hr/sh/sr:
     - '10.2'
     - '100.2'
     - '1000.2'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -1607,7 +1655,8 @@ bs/hr/sh/sr:
     - '100000.0'
     - '1000000.0'
 gd:
-- :rule: n = 1,11
+- :text: n = 1,11
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -1622,7 +1671,8 @@ gd:
     - '1.000'
     - '11.000'
     - '1.0000'
-- :rule: n = 2,12
+- :text: n = 2,12
+  :name: :two
   :samples:
   - :type: '@integer'
     :samples:
@@ -1637,7 +1687,8 @@ gd:
     - '2.000'
     - '12.000'
     - '2.0000'
-- :rule: n = 3..10,13..19
+- :text: n = 3..10,13..19
+  :name: :few
   :samples:
   - :type: '@integer'
     :samples:
@@ -1674,7 +1725,8 @@ gd:
     - '18.0'
     - '19.0'
     - '3.00'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -1724,7 +1776,8 @@ gd:
     - '100000.0'
     - '1000000.0'
 sl:
-- :rule: v = 0 and i % 100 = 1
+- :text: v = 0 and i % 100 = 1
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -1737,7 +1790,8 @@ sl:
     - '601'
     - '701'
     - '1001'
-- :rule: v = 0 and i % 100 = 2
+- :text: v = 0 and i % 100 = 2
+  :name: :two
   :samples:
   - :type: '@integer'
     :samples:
@@ -1750,7 +1804,8 @@ sl:
     - '602'
     - '702'
     - '1002'
-- :rule: v = 0 and i % 100 = 3..4 or v != 0
+- :text: v = 0 and i % 100 = 3..4 or v != 0
+  :name: :few
   :samples:
   - :type: '@integer'
     :samples:
@@ -1795,7 +1850,8 @@ sl:
     - '10000.0'
     - '100000.0'
     - '1000000.0'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -1821,7 +1877,8 @@ sl:
     - '100000'
     - '1000000'
 dsb/hsb:
-- :rule: v = 0 and i % 100 = 1 or f % 100 = 1
+- :text: v = 0 and i % 100 = 1 or f % 100 = 1
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -1847,7 +1904,8 @@ dsb/hsb:
     - '10.1'
     - '100.1'
     - '1000.1'
-- :rule: v = 0 and i % 100 = 2 or f % 100 = 2
+- :text: v = 0 and i % 100 = 2 or f % 100 = 2
+  :name: :two
   :samples:
   - :type: '@integer'
     :samples:
@@ -1873,7 +1931,8 @@ dsb/hsb:
     - '10.2'
     - '100.2'
     - '1000.2'
-- :rule: v = 0 and i % 100 = 3..4 or f % 100 = 3..4
+- :text: v = 0 and i % 100 = 3..4 or f % 100 = 3..4
+  :name: :few
   :samples:
   - :type: '@integer'
     :samples:
@@ -1915,7 +1974,8 @@ dsb/hsb:
     - '10.3'
     - '100.3'
     - '1000.3'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -1965,17 +2025,20 @@ dsb/hsb:
     - '100000.0'
     - '1000000.0'
 he/iw:
-- :rule: i = 1 and v = 0
+- :text: i = 1 and v = 0
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
     - '1'
-- :rule: i = 2 and v = 0
+- :text: i = 2 and v = 0
+  :name: :two
   :samples:
   - :type: '@integer'
     :samples:
     - '2'
-- :rule: v = 0 and n != 0..10 and n % 10 = 0
+- :text: v = 0 and n != 0..10 and n % 10 = 0
+  :name: :many
   :samples:
   - :type: '@integer'
     :samples:
@@ -1992,7 +2055,8 @@ he/iw:
     - '10000'
     - '100000'
     - '1000000'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -2039,19 +2103,22 @@ he/iw:
     - '100000.0'
     - '1000000.0'
 cs/sk:
-- :rule: i = 1 and v = 0
+- :text: i = 1 and v = 0
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
     - '1'
-- :rule: i = 2..4 and v = 0
+- :text: i = 2..4 and v = 0
+  :name: :few
   :samples:
   - :type: '@integer'
     :samples:
     - '2'
     - '3'
     - '4'
-- :rule: v != 0
+- :text: v != 0
+  :name: :many
   :samples:
   - :type: '@decimal'
     :samples:
@@ -2077,7 +2144,8 @@ cs/sk:
     - '10000.0'
     - '100000.0'
     - '1000000.0'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -2103,12 +2171,14 @@ cs/sk:
     - '100000'
     - '1000000'
 pl:
-- :rule: i = 1 and v = 0
+- :text: i = 1 and v = 0
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
     - '1'
-- :rule: v = 0 and i % 10 = 2..4 and i % 100 != 12..14
+- :text: v = 0 and i % 10 = 2..4 and i % 100 != 12..14
+  :name: :few
   :samples:
   - :type: '@integer'
     :samples:
@@ -2130,8 +2200,9 @@ pl:
     - '62'
     - '102'
     - '1002'
-- :rule: v = 0 and i != 1 and i % 10 = 0..1 or v = 0 and i % 10 = 5..9 or v = 0 and
+- :text: v = 0 and i != 1 and i % 10 = 0..1 or v = 0 and i % 10 = 5..9 or v = 0 and
     i % 100 = 12..14
+  :name: :many
   :samples:
   - :type: '@integer'
     :samples:
@@ -2156,7 +2227,8 @@ pl:
     - '10000'
     - '100000'
     - '1000000'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@decimal'
     :samples:
@@ -2183,7 +2255,8 @@ pl:
     - '100000.0'
     - '1000000.0'
 be:
-- :rule: n % 10 = 1 and n % 100 != 11
+- :text: n % 10 = 1 and n % 100 != 11
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -2209,7 +2282,8 @@ be:
     - '81.0'
     - '101.0'
     - '1001.0'
-- :rule: n % 10 = 2..4 and n % 100 != 12..14
+- :text: n % 10 = 2..4 and n % 100 != 12..14
+  :name: :few
   :samples:
   - :type: '@integer'
     :samples:
@@ -2243,7 +2317,8 @@ be:
     - '33.0'
     - '102.0'
     - '1002.0'
-- :rule: n % 10 = 0 or n % 10 = 5..9 or n % 100 = 11..14
+- :text: n % 10 = 0 or n % 10 = 5..9 or n % 100 = 11..14
+  :name: :many
   :samples:
   - :type: '@integer'
     :samples:
@@ -2283,7 +2358,8 @@ be:
     - '10000.0'
     - '100000.0'
     - '1000000.0'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@decimal'
     :samples:
@@ -2307,7 +2383,8 @@ be:
     - '100.1'
     - '1000.1'
 lt:
-- :rule: n % 10 = 1 and n % 100 != 11..19
+- :text: n % 10 = 1 and n % 100 != 11..19
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -2333,7 +2410,8 @@ lt:
     - '81.0'
     - '101.0'
     - '1001.0'
-- :rule: n % 10 = 2..9 and n % 100 != 11..19
+- :text: n % 10 = 2..9 and n % 100 != 11..19
+  :name: :few
   :samples:
   - :type: '@integer'
     :samples:
@@ -2368,7 +2446,8 @@ lt:
     - '22.0'
     - '102.0'
     - '1002.0'
-- :rule: f != 0
+- :text: f != 0
+  :name: :many
   :samples:
   - :type: '@decimal'
     :samples:
@@ -2391,7 +2470,8 @@ lt:
     - '10.1'
     - '100.1'
     - '1000.1'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -2432,7 +2512,8 @@ lt:
     - '100000.0'
     - '1000000.0'
 mt:
-- :rule: n = 1
+- :text: n = 1
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -2443,7 +2524,8 @@ mt:
     - '1.00'
     - '1.000'
     - '1.0000'
-- :rule: n = 0 or n % 100 = 2..10
+- :text: n = 0 or n % 100 = 2..10
+  :name: :few
   :samples:
   - :type: '@integer'
     :samples:
@@ -2477,7 +2559,8 @@ mt:
     - '10.0'
     - '102.0'
     - '1002.0'
-- :rule: n % 100 = 11..19
+- :text: n % 100 = 11..19
+  :name: :many
   :samples:
   - :type: '@integer'
     :samples:
@@ -2510,7 +2593,8 @@ mt:
     - '18.0'
     - '111.0'
     - '1011.0'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -2560,7 +2644,8 @@ mt:
     - '100000.0'
     - '1000000.0'
 ru/uk:
-- :rule: v = 0 and i % 10 = 1 and i % 100 != 11
+- :text: v = 0 and i % 10 = 1 and i % 100 != 11
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -2574,7 +2659,8 @@ ru/uk:
     - '81'
     - '101'
     - '1001'
-- :rule: v = 0 and i % 10 = 2..4 and i % 100 != 12..14
+- :text: v = 0 and i % 10 = 2..4 and i % 100 != 12..14
+  :name: :few
   :samples:
   - :type: '@integer'
     :samples:
@@ -2596,7 +2682,8 @@ ru/uk:
     - '62'
     - '102'
     - '1002'
-- :rule: v = 0 and i % 10 = 0 or v = 0 and i % 10 = 5..9 or v = 0 and i % 100 = 11..14
+- :text: v = 0 and i % 10 = 0 or v = 0 and i % 10 = 5..9 or v = 0 and i % 100 = 11..14
+  :name: :many
   :samples:
   - :type: '@integer'
     :samples:
@@ -2621,7 +2708,8 @@ ru/uk:
     - '10000'
     - '100000'
     - '1000000'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@decimal'
     :samples:
@@ -2648,7 +2736,8 @@ ru/uk:
     - '100000.0'
     - '1000000.0'
 br:
-- :rule: n % 10 = 1 and n % 100 != 11,71,91
+- :text: n % 10 = 1 and n % 100 != 11,71,91
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -2672,7 +2761,8 @@ br:
     - '81.0'
     - '101.0'
     - '1001.0'
-- :rule: n % 10 = 2 and n % 100 != 12,72,92
+- :text: n % 10 = 2 and n % 100 != 12,72,92
+  :name: :two
   :samples:
   - :type: '@integer'
     :samples:
@@ -2696,7 +2786,8 @@ br:
     - '82.0'
     - '102.0'
     - '1002.0'
-- :rule: n % 10 = 3..4,9 and n % 100 != 10..19,70..79,90..99
+- :text: n % 10 = 3..4,9 and n % 100 != 10..19,70..79,90..99
+  :name: :few
   :samples:
   - :type: '@integer'
     :samples:
@@ -2726,7 +2817,8 @@ br:
     - '34.0'
     - '103.0'
     - '1003.0'
-- :rule: n != 0 and n % 1000000 = 0
+- :text: n != 0 and n % 1000000 = 0
+  :name: :many
   :samples:
   - :type: '@integer'
     :samples:
@@ -2736,7 +2828,8 @@ br:
     - '1000000.0'
     - '1000000.00'
     - '1000000.000'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -2784,7 +2877,8 @@ br:
     - '10000.0'
     - '100000.0'
 ga:
-- :rule: n = 1
+- :text: n = 1
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -2795,7 +2889,8 @@ ga:
     - '1.00'
     - '1.000'
     - '1.0000'
-- :rule: n = 2
+- :text: n = 2
+  :name: :two
   :samples:
   - :type: '@integer'
     :samples:
@@ -2806,7 +2901,8 @@ ga:
     - '2.00'
     - '2.000'
     - '2.0000'
-- :rule: n = 3..6
+- :text: n = 3..6
+  :name: :few
   :samples:
   - :type: '@integer'
     :samples:
@@ -2832,7 +2928,8 @@ ga:
     - '4.0000'
     - '5.0000'
     - '6.0000'
-- :rule: n = 7..10
+- :text: n = 7..10
+  :name: :many
   :samples:
   - :type: '@integer'
     :samples:
@@ -2858,7 +2955,8 @@ ga:
     - '8.0000'
     - '9.0000'
     - '10.0000'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -2908,7 +3006,8 @@ ga:
     - '100000.0'
     - '1000000.0'
 gv:
-- :rule: v = 0 and i % 10 = 1
+- :text: v = 0 and i % 10 = 1
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -2922,7 +3021,8 @@ gv:
     - '71'
     - '101'
     - '1001'
-- :rule: v = 0 and i % 10 = 2
+- :text: v = 0 and i % 10 = 2
+  :name: :two
   :samples:
   - :type: '@integer'
     :samples:
@@ -2936,7 +3036,8 @@ gv:
     - '72'
     - '102'
     - '1002'
-- :rule: v = 0 and i % 100 = 0,20,40,60,80
+- :text: v = 0 and i % 100 = 0,20,40,60,80
+  :name: :few
   :samples:
   - :type: '@integer'
     :samples:
@@ -2952,7 +3053,8 @@ gv:
     - '10000'
     - '100000'
     - '1000000'
-- :rule: v != 0
+- :text: v != 0
+  :name: :many
   :samples:
   - :type: '@decimal'
     :samples:
@@ -2978,7 +3080,8 @@ gv:
     - '10000.0'
     - '100000.0'
     - '1000000.0'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -3001,7 +3104,8 @@ gv:
     - '103'
     - '1003'
 ar:
-- :rule: n = 0
+- :text: n = 0
+  :name: :zero
   :samples:
   - :type: '@integer'
     :samples:
@@ -3012,7 +3116,8 @@ ar:
     - '0.00'
     - '0.000'
     - '0.0000'
-- :rule: n = 1
+- :text: n = 1
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -3023,7 +3128,8 @@ ar:
     - '1.00'
     - '1.000'
     - '1.0000'
-- :rule: n = 2
+- :text: n = 2
+  :name: :two
   :samples:
   - :type: '@integer'
     :samples:
@@ -3034,7 +3140,8 @@ ar:
     - '2.00'
     - '2.000'
     - '2.0000'
-- :rule: n % 100 = 3..10
+- :text: n % 100 = 3..10
+  :name: :few
   :samples:
   - :type: '@integer'
     :samples:
@@ -3067,7 +3174,8 @@ ar:
     - '10.0'
     - '103.0'
     - '1003.0'
-- :rule: n % 100 = 11..99
+- :text: n % 100 = 11..99
+  :name: :many
   :samples:
   - :type: '@integer'
     :samples:
@@ -3101,7 +3209,8 @@ ar:
     - '18.0'
     - '111.0'
     - '1011.0'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:
@@ -3150,7 +3259,8 @@ ar:
     - '100000.0'
     - '1000000.0'
 cy:
-- :rule: n = 0
+- :text: n = 0
+  :name: :zero
   :samples:
   - :type: '@integer'
     :samples:
@@ -3161,7 +3271,8 @@ cy:
     - '0.00'
     - '0.000'
     - '0.0000'
-- :rule: n = 1
+- :text: n = 1
+  :name: :one
   :samples:
   - :type: '@integer'
     :samples:
@@ -3172,7 +3283,8 @@ cy:
     - '1.00'
     - '1.000'
     - '1.0000'
-- :rule: n = 2
+- :text: n = 2
+  :name: :two
   :samples:
   - :type: '@integer'
     :samples:
@@ -3183,7 +3295,8 @@ cy:
     - '2.00'
     - '2.000'
     - '2.0000'
-- :rule: n = 3
+- :text: n = 3
+  :name: :few
   :samples:
   - :type: '@integer'
     :samples:
@@ -3194,7 +3307,8 @@ cy:
     - '3.00'
     - '3.000'
     - '3.0000'
-- :rule: n = 6
+- :text: n = 6
+  :name: :many
   :samples:
   - :type: '@integer'
     :samples:
@@ -3205,7 +3319,8 @@ cy:
     - '6.00'
     - '6.000'
     - '6.0000'
-- :rule: ''
+- :text: ''
+  :name: :other
   :samples:
   - :type: '@integer'
     :samples:

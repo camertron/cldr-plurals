@@ -32,18 +32,11 @@ module CldrPlurals
         lang = prog_lang.to_s.gsub(/(^\w|[-_]\w)/) { $1[-1].upcase }
         const_name = "#{lang}Emitter"
 
-        const = if CldrPlurals.const_defined?(lang)
-          lang_const = CldrPlurals.const_get(lang)
-          if lang_const.const_defined?(const_name)
-            lang_const.const_get(const_name)
-          end
-        end
-
-        unless const
+        if CldrPlurals.const_defined?(const_name)
+          CldrPlurals.const_get(const_name)
+        else
           raise ArgumentError, "emitter '#{lang}::#{const_name}' not found."
         end
-
-        const
       end
     end
   end

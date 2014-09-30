@@ -7,3 +7,43 @@ require 'cldr-plurals'
 RSpec.configure do |config|
   config.mock_with :rr
 end
+
+def each_rule
+  samples.each_pair do |locales, rules|
+    rules.each do |rule|
+      next if rule[:text].empty?  # @TODO handle this case
+      tokens = CldrPlurals::Compiler::Tokenizer.tokenize(rule[:text])
+      rule_ast = CldrPlurals::Compiler::Parser.new(tokens).parse
+      yield locales, rule_ast, rule[:samples]
+    end
+  end
+end
+
+def each_rule_list
+  samples.each_pair do |locales, rules|
+    rule_list = CldrPlurals::Compiler::RuleList.new(locales)
+    samples = {}
+
+    rules.each do |rule|
+      next if rule[:text].empty?  # @TODO: handle this case
+      rule_list.add_rule(rule[:name], rule[:text])
+      samples[rule[:name]] = rule[:samples]
+    end
+
+    samples_per_name = samples.each_with_object({}) do |(name, samples), ret|
+      ret[name] = samples.flat_map do |sample_info|
+        sample_info[:samples]
+      end
+    end
+
+    yield rule_list, samples_per_name
+  end
+end
+
+def samples
+  YAML.load_file(samples_file)
+end
+
+def samples_file
+  File.join(File.expand_path(File.dirname(__FILE__)), 'samples.yml')
+end

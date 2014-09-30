@@ -63,8 +63,11 @@ task :update_samples do
 
     ret[locales] = (rules / 'pluralRule').map do |rule|
       chunks = rule.text.split(/(@integer|@decimal)/)
+      name = rule.attributes['count'].value.to_sym
+
       {
-        rule: chunks.first.strip,
+        text: chunks.first.strip,
+        name: name,
         samples: chunks[1..-1].each_slice(2).map do |slice|
           {
             type: slice.first.strip,
