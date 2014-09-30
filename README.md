@@ -65,7 +65,7 @@ end
 
 Note that there's no need to add an explicit rule for the `other` plural form.
 
-Rules can be emitted as a group as well via the `to_code` method, which accepts a target language as an argument:
+`RuleList`s can be emitted in their entirety via the `to_code` method, which accepts a target language as an argument:
 
 ```ruby
 rules.to_code(:ruby)
@@ -93,6 +93,8 @@ Which produces:
 
 You may have noticed that emitted target source code requires a runtime (the second argument). Runtimes provide methods to determine the 'parts' of a number, like the decimal portion or the number of decimals without trailing zeroes. Runtimes for [Ruby](https://github.com/camertron/cldr-plurals-runtime-rb) and [Javascript](https://github.com/camertron/cldr-plurals-runtime-js) exist as separate rubygems, so you'll need to include them in your project before being able to execute target code. Each runtime gem's README contains instructions on how to use it. Here are some quick examples:
 
+Ruby:
+
 ```ruby
 # construct RuleList...
 
@@ -103,6 +105,8 @@ plural_proc = eval(ruby_code)
 
 plural_proc.call('3', CldrPlurals::RubyRuntime)  # => :few
 ```
+
+Javascript:
 
 ```ruby
 # construct RuleList...
