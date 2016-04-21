@@ -25,9 +25,8 @@ def each_rule_list
     samples = {}
 
     rules.each do |rule|
-      next if rule[:text].empty?  # @TODO: handle this case
-      rule_list.add_rule(rule[:name], rule[:text])
       samples[rule[:name]] = rule[:samples]
+      rule_list.add_rule(rule[:name], rule[:text]) unless rule[:text].empty?
     end
 
     samples_per_name = samples.each_with_object({}) do |(name, samples), ret|
