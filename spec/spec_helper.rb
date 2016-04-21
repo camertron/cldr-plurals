@@ -11,7 +11,7 @@ end
 def each_rule
   samples.each_pair do |locales, rules|
     rules.each do |rule|
-      next if rule[:text].empty?  # @TODO handle this case
+      next if rule[:text].empty?  # skip other rule test, as it's a fallback
       tokens = CldrPlurals::Compiler::Tokenizer.tokenize(rule[:text])
       rule_ast = CldrPlurals::Compiler::Parser.new(tokens).parse
       yield locales, rule_ast, rule[:samples]
