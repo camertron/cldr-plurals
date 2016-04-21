@@ -53,7 +53,7 @@ task :update_samples do
   require 'nokogiri'
   require 'yaml'
 
-  url = 'http://unicode.org/cldr/trac/browser/tags/release-26-d04/' +
+  url = 'http://unicode.org/cldr/trac/browser/tags/release-29/' +
     'common/supplemental/plurals.xml?format=txt'
 
   doc = Nokogiri::XML(open(url).read)

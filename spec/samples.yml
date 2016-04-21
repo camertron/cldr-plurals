@@ -3,7 +3,7 @@ bm/bo/dz/id/ig/ii/in/ja/jbo/jv/jw/kde/kea/km/ko/lkt/lo/ms/my/nqo/root/sah/ses/sg
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '1'
@@ -26,7 +26,7 @@ bm/bo/dz/id/ig/ii/in/ja/jbo/jv/jw/kde/kea/km/ko/lkt/lo/ms/my/nqo/root/sah/ses/sg
     - '10000'
     - '100000'
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '0.1'
@@ -50,15 +50,15 @@ bm/bo/dz/id/ig/ii/in/ja/jbo/jv/jw/kde/kea/km/ko/lkt/lo/ms/my/nqo/root/sah/ses/sg
     - '10000.0'
     - '100000.0'
     - '1000000.0'
-am/bn/fa/gu/hi/kn/mr/zu:
+am/as/bn/fa/gu/hi/kn/mr/zu:
 - :text: i = 0 or n = 1
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '1'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '0.1'
@@ -79,7 +79,7 @@ am/bn/fa/gu/hi/kn/mr/zu:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '2'
     - '3'
@@ -102,7 +102,7 @@ am/bn/fa/gu/hi/kn/mr/zu:
     - '10000'
     - '100000'
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '1.1'
     - '1.2'
@@ -130,11 +130,11 @@ ff/fr/hy/kab:
 - :text: i = 0,1
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '1'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '0.1'
@@ -155,7 +155,7 @@ ff/fr/hy/kab:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '2'
     - '3'
@@ -178,7 +178,7 @@ ff/fr/hy/kab:
     - '10000'
     - '100000'
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '2.0'
     - '2.1'
@@ -206,13 +206,13 @@ ast/ca/de/en/et/fi/fy/gl/it/ji/nl/sv/sw/ur/yi:
 - :text: i = 1 and v = 0
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '1'
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '2'
@@ -235,7 +235,7 @@ ast/ca/de/en/et/fi/fy/gl/it/ji/nl/sv/sw/ur/yi:
     - '10000'
     - '100000'
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '0.1'
@@ -263,11 +263,11 @@ si:
 - :text: n = 0,1 or i = 0 and f = 1
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '1'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '0.1'
@@ -284,7 +284,7 @@ si:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '2'
     - '3'
@@ -307,7 +307,7 @@ si:
     - '10000'
     - '100000'
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.2'
     - '0.3'
@@ -335,11 +335,11 @@ ak/bh/guw/ln/mg/nso/pa/ti/wa:
 - :text: n = 0..1
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '1'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '1.0'
@@ -352,7 +352,7 @@ ak/bh/guw/ln/mg/nso/pa/ti/wa:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '2'
     - '3'
@@ -375,7 +375,7 @@ ak/bh/guw/ln/mg/nso/pa/ti/wa:
     - '10000'
     - '100000'
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.1'
     - '0.2'
@@ -403,7 +403,7 @@ tzm:
 - :text: n = 0..1 or n = 11..99
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '1'
@@ -421,7 +421,7 @@ tzm:
     - '22'
     - '23'
     - '24'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '1.0'
@@ -442,7 +442,7 @@ tzm:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '2'
     - '3'
@@ -464,7 +464,7 @@ tzm:
     - '10000'
     - '100000'
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.1'
     - '0.2'
@@ -492,11 +492,11 @@ pt:
 - :text: n = 0..2 and n != 2
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '1'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '1.0'
@@ -509,7 +509,7 @@ pt:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '2'
     - '3'
@@ -532,7 +532,7 @@ pt:
     - '10000'
     - '100000'
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.1'
     - '0.2'
@@ -556,14 +556,14 @@ pt:
     - '10000.0'
     - '100000.0'
     - '1000000.0'
-? af/asa/az/bem/bez/bg/brx/cgg/chr/ckb/dv/ee/el/eo/es/eu/fo/fur/gsw/ha/haw/hu/jgo/jmc/ka/kaj/kcg/kk/kkj/kl/ks/ksb/ku/ky/lb/lg/mas/mgo/ml/mn/nah/nb/nd/ne/nn/nnh/no/nr/ny/nyn/om/or/os/pap/ps/rm/rof/rwk/saq/seh/sn/so/sq/ss/ssy/st/syr/ta/te/teo/tig/tk/tn/tr/ts/ug/uz/ve/vo/vun/wae/xh/xog
+? af/asa/az/bem/bez/bg/brx/ce/cgg/chr/ckb/dv/ee/el/eo/es/eu/fo/fur/gsw/ha/haw/hu/jgo/jmc/ka/kaj/kcg/kk/kkj/kl/ks/ksb/ku/ky/lb/lg/mas/mgo/ml/mn/nah/nb/nd/ne/nn/nnh/no/nr/ny/nyn/om/or/os/pap/ps/rm/rof/rwk/saq/sdh/seh/sn/so/sq/ss/ssy/st/syr/ta/te/teo/tig/tk/tn/tr/ts/ug/uz/ve/vo/vun/wae/xh/xog
 : - :text: n = 1
     :name: :one
     :samples:
-    - :type: '@integer'
+    - :type: "@integer"
       :samples:
       - '1'
-    - :type: '@decimal'
+    - :type: "@decimal"
       :samples:
       - '1.0'
       - '1.00'
@@ -572,7 +572,7 @@ pt:
   - :text: ''
     :name: :other
     :samples:
-    - :type: '@integer'
+    - :type: "@integer"
       :samples:
       - '0'
       - '2'
@@ -595,7 +595,7 @@ pt:
       - '10000'
       - '100000'
       - '1000000'
-    - :type: '@decimal'
+    - :type: "@decimal"
       :samples:
       - '0.0'
       - '0.1'
@@ -623,13 +623,13 @@ pt_PT:
 - :text: n = 1 and v = 0
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '1'
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '2'
@@ -652,7 +652,7 @@ pt_PT:
     - '10000'
     - '100000'
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '0.1'
@@ -680,10 +680,10 @@ da:
 - :text: n = 1 or t != 0 and i = 0,1
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '1'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.1'
     - '0.2'
@@ -704,7 +704,7 @@ da:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '2'
@@ -727,7 +727,7 @@ da:
     - '10000'
     - '100000'
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '2.0'
@@ -755,7 +755,7 @@ is:
 - :text: t = 0 and i % 10 = 1 and i % 100 != 11 or t != 0
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '1'
     - '21'
@@ -767,7 +767,7 @@ is:
     - '81'
     - '101'
     - '1001'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.1'
     - '0.2'
@@ -791,7 +791,7 @@ is:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '2'
@@ -814,7 +814,7 @@ is:
     - '10000'
     - '100000'
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '2.0'
@@ -834,7 +834,7 @@ mk:
 - :text: v = 0 and i % 10 = 1 or f % 10 = 1
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '1'
     - '11'
@@ -846,7 +846,7 @@ mk:
     - '71'
     - '101'
     - '1001'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.1'
     - '1.1'
@@ -862,7 +862,7 @@ mk:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '2'
@@ -885,7 +885,7 @@ mk:
     - '10000'
     - '100000'
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '0.2'
@@ -914,7 +914,7 @@ fil/tl:
     4,6,9
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '1'
@@ -937,7 +937,7 @@ fil/tl:
     - '10000'
     - '100000'
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '0.1'
@@ -964,7 +964,7 @@ fil/tl:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '4'
     - '6'
@@ -976,7 +976,7 @@ fil/tl:
     - '26'
     - '104'
     - '1004'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.4'
     - '0.6'
@@ -993,7 +993,7 @@ lv/prg:
 - :text: n % 10 = 0 or n % 100 = 11..19 or v = 2 and f % 100 = 11..19
   :name: :zero
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '10'
@@ -1016,7 +1016,7 @@ lv/prg:
     - '10000'
     - '100000'
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '10.0'
@@ -1035,7 +1035,7 @@ lv/prg:
     v != 2 and f % 10 = 1
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '1'
     - '21'
@@ -1047,7 +1047,7 @@ lv/prg:
     - '81'
     - '101'
     - '1001'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.1'
     - '1.0'
@@ -1064,7 +1064,7 @@ lv/prg:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '2'
     - '3'
@@ -1084,7 +1084,7 @@ lv/prg:
     - '29'
     - '102'
     - '1002'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.2'
     - '0.3'
@@ -1109,10 +1109,10 @@ lag:
 - :text: n = 0
   :name: :zero
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '0.00'
@@ -1121,10 +1121,10 @@ lag:
 - :text: i = 0,1 and n != 0
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '1'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.1'
     - '0.2'
@@ -1145,7 +1145,7 @@ lag:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '2'
     - '3'
@@ -1168,7 +1168,7 @@ lag:
     - '10000'
     - '100000'
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '2.0'
     - '2.1'
@@ -1196,10 +1196,10 @@ ksh:
 - :text: n = 0
   :name: :zero
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '0.00'
@@ -1208,10 +1208,10 @@ ksh:
 - :text: n = 1
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '1'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '1.0'
     - '1.00'
@@ -1220,7 +1220,7 @@ ksh:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '2'
     - '3'
@@ -1243,7 +1243,7 @@ ksh:
     - '10000'
     - '100000'
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.1'
     - '0.2'
@@ -1271,10 +1271,10 @@ iu/kw/naq/se/sma/smi/smj/smn/sms:
 - :text: n = 1
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '1'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '1.0'
     - '1.00'
@@ -1283,10 +1283,10 @@ iu/kw/naq/se/sma/smi/smj/smn/sms:
 - :text: n = 2
   :name: :two
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '2'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '2.0'
     - '2.00'
@@ -1295,7 +1295,7 @@ iu/kw/naq/se/sma/smi/smj/smn/sms:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '3'
@@ -1318,7 +1318,7 @@ iu/kw/naq/se/sma/smi/smj/smn/sms:
     - '10000'
     - '100000'
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '0.1'
@@ -1346,11 +1346,11 @@ shi:
 - :text: i = 0 or n = 1
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '1'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '0.1'
@@ -1371,7 +1371,7 @@ shi:
 - :text: n = 2..10
   :name: :few
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '2'
     - '3'
@@ -1382,7 +1382,7 @@ shi:
     - '8'
     - '9'
     - '10'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '2.0'
     - '3.0'
@@ -1403,7 +1403,7 @@ shi:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '11'
     - '12'
@@ -1426,7 +1426,7 @@ shi:
     - '10000'
     - '100000'
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '1.1'
     - '1.2'
@@ -1454,13 +1454,13 @@ mo/ro:
 - :text: i = 1 and v = 0
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '1'
 - :text: v != 0 or n = 0 or n != 1 and n % 100 = 1..19
   :name: :few
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '2'
@@ -1480,7 +1480,7 @@ mo/ro:
     - '16'
     - '101'
     - '1001'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '0.1'
@@ -1507,7 +1507,7 @@ mo/ro:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '20'
     - '21'
@@ -1534,7 +1534,7 @@ bs/hr/sh/sr:
 - :text: v = 0 and i % 10 = 1 and i % 100 != 11 or f % 10 = 1 and f % 100 != 11
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '1'
     - '21'
@@ -1546,7 +1546,7 @@ bs/hr/sh/sr:
     - '81'
     - '101'
     - '1001'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.1'
     - '1.1'
@@ -1563,7 +1563,7 @@ bs/hr/sh/sr:
     != 12..14
   :name: :few
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '2'
     - '3'
@@ -1583,7 +1583,7 @@ bs/hr/sh/sr:
     - '62'
     - '102'
     - '1002'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.2'
     - '0.3'
@@ -1607,7 +1607,7 @@ bs/hr/sh/sr:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '5'
@@ -1630,7 +1630,7 @@ bs/hr/sh/sr:
     - '10000'
     - '100000'
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '0.5'
@@ -1658,11 +1658,11 @@ gd:
 - :text: n = 1,11
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '1'
     - '11'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '1.0'
     - '11.0'
@@ -1674,11 +1674,11 @@ gd:
 - :text: n = 2,12
   :name: :two
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '2'
     - '12'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '2.0'
     - '12.0'
@@ -1690,7 +1690,7 @@ gd:
 - :text: n = 3..10,13..19
   :name: :few
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '3'
     - '4'
@@ -1707,7 +1707,7 @@ gd:
     - '17'
     - '18'
     - '19'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '3.0'
     - '4.0'
@@ -1728,7 +1728,7 @@ gd:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '20'
@@ -1751,7 +1751,7 @@ gd:
     - '10000'
     - '100000'
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '0.1'
@@ -1779,7 +1779,7 @@ sl:
 - :text: v = 0 and i % 100 = 1
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '1'
     - '101'
@@ -1793,7 +1793,7 @@ sl:
 - :text: v = 0 and i % 100 = 2
   :name: :two
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '2'
     - '102'
@@ -1807,7 +1807,7 @@ sl:
 - :text: v = 0 and i % 100 = 3..4 or v != 0
   :name: :few
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '3'
     - '4'
@@ -1826,7 +1826,7 @@ sl:
     - '703'
     - '704'
     - '1003'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '0.1'
@@ -1853,7 +1853,7 @@ sl:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '5'
@@ -1880,7 +1880,7 @@ dsb/hsb:
 - :text: v = 0 and i % 100 = 1 or f % 100 = 1
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '1'
     - '101'
@@ -1891,7 +1891,7 @@ dsb/hsb:
     - '601'
     - '701'
     - '1001'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.1'
     - '1.1'
@@ -1907,7 +1907,7 @@ dsb/hsb:
 - :text: v = 0 and i % 100 = 2 or f % 100 = 2
   :name: :two
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '2'
     - '102'
@@ -1918,7 +1918,7 @@ dsb/hsb:
     - '602'
     - '702'
     - '1002'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.2'
     - '1.2'
@@ -1934,7 +1934,7 @@ dsb/hsb:
 - :text: v = 0 and i % 100 = 3..4 or f % 100 = 3..4
   :name: :few
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '3'
     - '4'
@@ -1953,7 +1953,7 @@ dsb/hsb:
     - '703'
     - '704'
     - '1003'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.3'
     - '0.4'
@@ -1977,7 +1977,7 @@ dsb/hsb:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '5'
@@ -2000,7 +2000,7 @@ dsb/hsb:
     - '10000'
     - '100000'
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '0.5'
@@ -2028,19 +2028,19 @@ he/iw:
 - :text: i = 1 and v = 0
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '1'
 - :text: i = 2 and v = 0
   :name: :two
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '2'
 - :text: v = 0 and n != 0..10 and n % 10 = 0
   :name: :many
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '20'
     - '30'
@@ -2058,7 +2058,7 @@ he/iw:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '3'
@@ -2078,7 +2078,7 @@ he/iw:
     - '17'
     - '101'
     - '1001'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '0.1'
@@ -2106,13 +2106,13 @@ cs/sk:
 - :text: i = 1 and v = 0
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '1'
 - :text: i = 2..4 and v = 0
   :name: :few
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '2'
     - '3'
@@ -2120,7 +2120,7 @@ cs/sk:
 - :text: v != 0
   :name: :many
   :samples:
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '0.1'
@@ -2147,7 +2147,7 @@ cs/sk:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '5'
@@ -2174,13 +2174,13 @@ pl:
 - :text: i = 1 and v = 0
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '1'
 - :text: v = 0 and i % 10 = 2..4 and i % 100 != 12..14
   :name: :few
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '2'
     - '3'
@@ -2204,7 +2204,7 @@ pl:
     i % 100 = 12..14
   :name: :many
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '5'
@@ -2230,7 +2230,7 @@ pl:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '0.1'
@@ -2258,7 +2258,7 @@ be:
 - :text: n % 10 = 1 and n % 100 != 11
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '1'
     - '21'
@@ -2270,7 +2270,7 @@ be:
     - '81'
     - '101'
     - '1001'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '1.0'
     - '21.0'
@@ -2285,7 +2285,7 @@ be:
 - :text: n % 10 = 2..4 and n % 100 != 12..14
   :name: :few
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '2'
     - '3'
@@ -2305,7 +2305,7 @@ be:
     - '62'
     - '102'
     - '1002'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '2.0'
     - '3.0'
@@ -2320,7 +2320,7 @@ be:
 - :text: n % 10 = 0 or n % 10 = 5..9 or n % 100 = 11..14
   :name: :many
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '5'
@@ -2343,7 +2343,7 @@ be:
     - '10000'
     - '100000'
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '5.0'
@@ -2361,7 +2361,7 @@ be:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.1'
     - '0.2'
@@ -2386,7 +2386,7 @@ lt:
 - :text: n % 10 = 1 and n % 100 != 11..19
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '1'
     - '21'
@@ -2398,7 +2398,7 @@ lt:
     - '81'
     - '101'
     - '1001'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '1.0'
     - '21.0'
@@ -2413,7 +2413,7 @@ lt:
 - :text: n % 10 = 2..9 and n % 100 != 11..19
   :name: :few
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '2'
     - '3'
@@ -2433,7 +2433,7 @@ lt:
     - '29'
     - '102'
     - '1002'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '2.0'
     - '3.0'
@@ -2449,7 +2449,7 @@ lt:
 - :text: f != 0
   :name: :many
   :samples:
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.1'
     - '0.2'
@@ -2473,7 +2473,7 @@ lt:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '10'
@@ -2496,7 +2496,7 @@ lt:
     - '10000'
     - '100000'
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '10.0'
@@ -2515,10 +2515,10 @@ mt:
 - :text: n = 1
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '1'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '1.0'
     - '1.00'
@@ -2527,7 +2527,7 @@ mt:
 - :text: n = 0 or n % 100 = 2..10
   :name: :few
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '2'
@@ -2546,7 +2546,7 @@ mt:
     - '106'
     - '107'
     - '1002'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '2.0'
@@ -2562,7 +2562,7 @@ mt:
 - :text: n % 100 = 11..19
   :name: :many
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '11'
     - '12'
@@ -2581,7 +2581,7 @@ mt:
     - '116'
     - '117'
     - '1011'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '11.0'
     - '12.0'
@@ -2596,7 +2596,7 @@ mt:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '20'
     - '21'
@@ -2619,7 +2619,7 @@ mt:
     - '10000'
     - '100000'
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.1'
     - '0.2'
@@ -2647,7 +2647,7 @@ ru/uk:
 - :text: v = 0 and i % 10 = 1 and i % 100 != 11
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '1'
     - '21'
@@ -2662,7 +2662,7 @@ ru/uk:
 - :text: v = 0 and i % 10 = 2..4 and i % 100 != 12..14
   :name: :few
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '2'
     - '3'
@@ -2685,7 +2685,7 @@ ru/uk:
 - :text: v = 0 and i % 10 = 0 or v = 0 and i % 10 = 5..9 or v = 0 and i % 100 = 11..14
   :name: :many
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '5'
@@ -2711,7 +2711,7 @@ ru/uk:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '0.1'
@@ -2739,7 +2739,7 @@ br:
 - :text: n % 10 = 1 and n % 100 != 11,71,91
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '1'
     - '21'
@@ -2750,7 +2750,7 @@ br:
     - '81'
     - '101'
     - '1001'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '1.0'
     - '21.0'
@@ -2764,7 +2764,7 @@ br:
 - :text: n % 10 = 2 and n % 100 != 12,72,92
   :name: :two
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '2'
     - '22'
@@ -2775,7 +2775,7 @@ br:
     - '82'
     - '102'
     - '1002'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '2.0'
     - '22.0'
@@ -2789,7 +2789,7 @@ br:
 - :text: n % 10 = 3..4,9 and n % 100 != 10..19,70..79,90..99
   :name: :few
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '3'
     - '4'
@@ -2805,7 +2805,7 @@ br:
     - '49'
     - '103'
     - '1003'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '3.0'
     - '4.0'
@@ -2820,10 +2820,10 @@ br:
 - :text: n != 0 and n % 1000000 = 0
   :name: :many
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '1000000.0'
     - '1000000.00'
@@ -2831,7 +2831,7 @@ br:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '5'
@@ -2853,7 +2853,7 @@ br:
     - '1000'
     - '10000'
     - '100000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '0.1'
@@ -2880,10 +2880,10 @@ ga:
 - :text: n = 1
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '1'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '1.0'
     - '1.00'
@@ -2892,10 +2892,10 @@ ga:
 - :text: n = 2
   :name: :two
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '2'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '2.0'
     - '2.00'
@@ -2904,13 +2904,13 @@ ga:
 - :text: n = 3..6
   :name: :few
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '3'
     - '4'
     - '5'
     - '6'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '3.0'
     - '4.0'
@@ -2931,13 +2931,13 @@ ga:
 - :text: n = 7..10
   :name: :many
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '7'
     - '8'
     - '9'
     - '10'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '7.0'
     - '8.0'
@@ -2958,7 +2958,7 @@ ga:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '11'
@@ -2981,7 +2981,7 @@ ga:
     - '10000'
     - '100000'
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '0.1'
@@ -3009,7 +3009,7 @@ gv:
 - :text: v = 0 and i % 10 = 1
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '1'
     - '11'
@@ -3024,7 +3024,7 @@ gv:
 - :text: v = 0 and i % 10 = 2
   :name: :two
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '2'
     - '12'
@@ -3039,7 +3039,7 @@ gv:
 - :text: v = 0 and i % 100 = 0,20,40,60,80
   :name: :few
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
     - '20'
@@ -3056,7 +3056,7 @@ gv:
 - :text: v != 0
   :name: :many
   :samples:
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '0.1'
@@ -3083,7 +3083,7 @@ gv:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '3'
     - '4'
@@ -3107,10 +3107,10 @@ ar:
 - :text: n = 0
   :name: :zero
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '0.00'
@@ -3119,10 +3119,10 @@ ar:
 - :text: n = 1
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '1'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '1.0'
     - '1.00'
@@ -3131,10 +3131,10 @@ ar:
 - :text: n = 2
   :name: :two
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '2'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '2.0'
     - '2.00'
@@ -3143,7 +3143,7 @@ ar:
 - :text: n % 100 = 3..10
   :name: :few
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '3'
     - '4'
@@ -3162,7 +3162,7 @@ ar:
     - '109'
     - '110'
     - '1003'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '3.0'
     - '4.0'
@@ -3177,7 +3177,7 @@ ar:
 - :text: n % 100 = 11..99
   :name: :many
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '11'
     - '12'
@@ -3197,7 +3197,7 @@ ar:
     - '26'
     - '111'
     - '1011'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '11.0'
     - '12.0'
@@ -3212,7 +3212,7 @@ ar:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '100'
     - '101'
@@ -3234,7 +3234,7 @@ ar:
     - '10000'
     - '100000'
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.1'
     - '0.2'
@@ -3262,10 +3262,10 @@ cy:
 - :text: n = 0
   :name: :zero
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '0'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.0'
     - '0.00'
@@ -3274,10 +3274,10 @@ cy:
 - :text: n = 1
   :name: :one
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '1'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '1.0'
     - '1.00'
@@ -3286,10 +3286,10 @@ cy:
 - :text: n = 2
   :name: :two
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '2'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '2.0'
     - '2.00'
@@ -3298,10 +3298,10 @@ cy:
 - :text: n = 3
   :name: :few
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '3'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '3.0'
     - '3.00'
@@ -3310,10 +3310,10 @@ cy:
 - :text: n = 6
   :name: :many
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '6'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '6.0'
     - '6.00'
@@ -3322,7 +3322,7 @@ cy:
 - :text: ''
   :name: :other
   :samples:
-  - :type: '@integer'
+  - :type: "@integer"
     :samples:
     - '4'
     - '5'
@@ -3345,7 +3345,7 @@ cy:
     - '10000'
     - '100000'
     - '1000000'
-  - :type: '@decimal'
+  - :type: "@decimal"
     :samples:
     - '0.1'
     - '0.2'
