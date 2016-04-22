@@ -84,7 +84,8 @@ module CldrPlurals
 
       def emit_range_check(range, operand)
         # a..b represents all *integers* between a and b, inclusive.
-        "[#{(range.start..range.finish).to_a.join(',')}].include?(#{emit(operand)})"
+        n = emit(operand)
+        "(#{n}.floor == #{n}) && (#{n} >= #{range.start}) && (#{n} <= #{range.finish})"
       end
 
       def emit_operator(op)
