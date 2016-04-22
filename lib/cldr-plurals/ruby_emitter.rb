@@ -43,7 +43,7 @@ module CldrPlurals
         case expr.value
           when CldrPlurals::Compiler::Range
             neg = expr.operation.symbol == '!=' ? '!' : ''
-            "#{neg}(#{emit_range(expr.value)}).include?(#{emit(expr.operand)})"
+            "#{neg}(#{emit_range_check(expr.value, expr.operand)})"
           when CldrPlurals::Compiler::ValueSet
             "(#{emit_value_set(expr.value, expr.operand, expr.operation)})"
           else
@@ -56,7 +56,7 @@ module CldrPlurals
           when CldrPlurals::Compiler::Range
             expr = emit(rel.expression)
             neg = rel.operation.symbol == '!=' ? '!' : ''
-            "#{neg}(#{emit_range(rel.value)}).include?(#{expr})"
+            "#{neg}(#{emit_range_check(rel.value, expr)})"
           when CldrPlurals::Compiler::ValueSet
             "(#{emit_value_set(rel.value, rel.expression, rel.operation)})"
           else
@@ -69,7 +69,7 @@ module CldrPlurals
           case value
             when CldrPlurals::Compiler::Range
               neg = operator.symbol == '!=' ? '!' : ''
-              "#{neg}(#{emit_range(value)}).include?(#{emit(operand)})"
+              "#{neg}(#{emit_range_check(value, operand)})"
             else
               "(#{emit(operand)} #{emit(operator)} #{emit(value)})"
           end
@@ -82,8 +82,10 @@ module CldrPlurals
         end
       end
 
-      def emit_range(range)
-        "#{emit(range.start)}..#{emit(range.finish)}"
+      def emit_range_check(range, operand)
+        # a..b represents all *integers* between a and b, inclusive.
+        n = emit(operand)
+        "(#{n}.floor == #{n}) && (#{n} >= #{range.start}) && (#{n} <= #{range.finish})"
       end
 
       def emit_operator(op)
