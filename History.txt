@@ -1,3 +1,8 @@
+== 1.1.0
+
+* Better, more accurate range handling according to TR-35.
+* Upgrade to CLDR v29.
+
 == 1.0.1
 
 * Added MIT license.
