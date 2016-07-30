@@ -8,6 +8,10 @@ RSpec.configure do |config|
   config.mock_with :rr
 end
 
+ADDITIONAL_SAMPLES = {
+  "ar" => { other: %w(3.1 3.2 3.3) } # improve test coverage for Arabic
+}
+
 def each_rule
   samples.each_pair do |locales, rules|
     rules.each do |rule|
@@ -18,6 +22,7 @@ def each_rule
     end
   end
 end
+
 
 def each_rule_list
   samples.each_pair do |locales, rules|
@@ -33,6 +38,10 @@ def each_rule_list
       ret[name] = samples.flat_map do |sample_info|
         sample_info[:samples]
       end
+    end
+
+    (ADDITIONAL_SAMPLES[locales] || {}).each do |name, more_samples|
+      samples_per_name[name].concat(more_samples)
     end
 
     yield rule_list, samples_per_name
