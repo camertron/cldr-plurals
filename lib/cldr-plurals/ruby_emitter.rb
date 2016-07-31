@@ -32,11 +32,11 @@ module CldrPlurals
       end
 
       def emit_or_condition(cond)
-        "(#{emit(cond.left)} || #{emit(cond.right)})"
+        "((#{emit(cond.left)}) || (#{emit(cond.right)}))"
       end
 
       def emit_and_condition(cond)
-        "(#{emit(cond.left)} && #{emit(cond.right)})"
+        "((#{emit(cond.left)}) && (#{emit(cond.right)}))"
       end
 
       def emit_expression(expr)
@@ -84,7 +84,7 @@ module CldrPlurals
 
       def emit_range_check(range, operand)
         # a..b represents all *integers* between a and b, inclusive.
-        n = emit(operand)
+        n = "(#{emit(operand)})"
         "(#{n}.floor == #{n}) && (#{n} >= #{range.start}) && (#{n} <= #{range.finish})"
       end
 
