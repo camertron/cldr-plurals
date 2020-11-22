@@ -14,19 +14,19 @@ module CldrPlurals
     class Tokenizer
 
       TOKENS = {
-        /@integer/ => :int_sample,
-        /@decimal/ => :dec_sample,
-        /\u2026/   => :infinite_set,
-        /~/        => :sample_range,
-        /and/      => :and,
-        /or/       => :or,
-        /[niftvw]/ => :operand,
-        /,/        => :comma,
-        /\.\./     => :range,
-        /%/        => :modulo,
-        /=/        => :equals,
-        /\!=/      => :not_equals,
-        /[\d]+/    => :number
+        /@integer/  => :int_sample,
+        /@decimal/  => :dec_sample,
+        /\u2026/    => :infinite_set,
+        /~/         => :sample_range,
+        /and/       => :and,
+        /or/        => :or,
+        /[niftvwe]/ => :operand,
+        /,/         => :comma,
+        /\.\./      => :range,
+        /%/         => :modulo,
+        /=/         => :equals,
+        /\!=/       => :not_equals,
+        /[\d]+/     => :number
       }
 
       ALL_TOKENS = Regexp.compile(

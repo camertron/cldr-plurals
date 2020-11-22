@@ -9,9 +9,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/camertron"
 
   s.description = s.summary = 'Tokenizes and parses CLDR plural rules and provides a mechanism for emitting them as source code'
-
   s.platform = Gem::Platform::RUBY
-  s.has_rdoc = true
 
   s.require_path = 'lib'
   s.files = Dir["{lib,spec}/**/*", "Gemfile", "History.txt", "LICENSE.txt", "README.md", "Rakefile", "cldr-plurals.gemspec"]

@@ -1,5 +1,5 @@
 ---
-bm/bo/dz/id/ig/ii/in/ja/jbo/jv/jw/kde/kea/km/ko/lkt/lo/ms/my/nqo/root/sah/ses/sg/th/to/vi/wo/yo/zh:
+bm/bo/dz/id/ig/ii/in/ja/jbo/jv/jw/kde/kea/km/ko/lkt/lo/ms/my/nqo/osa/root/sah/ses/sg/su/th/to/vi/wo/yo/yue/zh:
 - :text: ''
   :name: :other
   :samples:
@@ -50,7 +50,7 @@ bm/bo/dz/id/ig/ii/in/ja/jbo/jv/jw/kde/kea/km/ko/lkt/lo/ms/my/nqo/root/sah/ses/sg
     - '10000.0'
     - '100000.0'
     - '1000000.0'
-am/as/bn/fa/gu/hi/kn/mr/zu:
+am/as/bn/doi/fa/gu/hi/kn/pcm/zu:
 - :text: i = 0 or n = 1
   :name: :one
   :samples:
@@ -126,7 +126,7 @@ am/as/bn/fa/gu/hi/kn/mr/zu:
     - '10000.0'
     - '100000.0'
     - '1000000.0'
-ff/fr/hy/kab:
+ff/hy/kab:
 - :text: i = 0,1
   :name: :one
   :samples:
@@ -202,7 +202,83 @@ ff/fr/hy/kab:
     - '10000.0'
     - '100000.0'
     - '1000000.0'
-ast/ca/de/en/et/fi/fy/gl/it/ji/nl/sv/sw/ur/yi:
+pt:
+- :text: i = 0..1
+  :name: :one
+  :samples:
+  - :type: "@integer"
+    :samples:
+    - '0'
+    - '1'
+  - :type: "@decimal"
+    :samples:
+    - '0.0'
+    - '0.1'
+    - '0.2'
+    - '0.3'
+    - '0.4'
+    - '0.5'
+    - '0.6'
+    - '0.7'
+    - '0.8'
+    - '0.9'
+    - '1.0'
+    - '1.1'
+    - '1.2'
+    - '1.3'
+    - '1.4'
+    - '1.5'
+- :text: ''
+  :name: :other
+  :samples:
+  - :type: "@integer"
+    :samples:
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+    - '10'
+    - '11'
+    - '12'
+    - '13'
+    - '14'
+    - '15'
+    - '16'
+    - '17'
+    - '100'
+    - '1000'
+    - '10000'
+    - '100000'
+    - '1000000'
+  - :type: "@decimal"
+    :samples:
+    - '2.0'
+    - '2.1'
+    - '2.2'
+    - '2.3'
+    - '2.4'
+    - '2.5'
+    - '2.6'
+    - '2.7'
+    - '2.8'
+    - '2.9'
+    - '3.0'
+    - '3.1'
+    - '3.2'
+    - '3.3'
+    - '3.4'
+    - '3.5'
+    - '10.0'
+    - '100.0'
+    - '1000.0'
+    - '10000.0'
+    - '100000.0'
+    - '1000000.0'
+ast/ca/de/en/et/fi/fy/gl/ia/io/it/ji/lij/nl/pt_PT/sc/scn/sv/sw/ur/yi:
 - :text: i = 1 and v = 0
   :name: :one
   :samples:
@@ -331,7 +407,7 @@ si:
     - '10000.0'
     - '100000.0'
     - '1000000.0'
-ak/bh/guw/ln/mg/nso/pa/ti/wa:
+ak/bho/guw/ln/mg/nso/pa/ti/wa:
 - :text: n = 0..1
   :name: :one
   :samples:
@@ -488,75 +564,7 @@ tzm:
     - '10000.0'
     - '100000.0'
     - '1000000.0'
-pt:
-- :text: n = 0..2 and n != 2
-  :name: :one
-  :samples:
-  - :type: "@integer"
-    :samples:
-    - '0'
-    - '1'
-  - :type: "@decimal"
-    :samples:
-    - '0.0'
-    - '1.0'
-    - '0.00'
-    - '1.00'
-    - '0.000'
-    - '1.000'
-    - '0.0000'
-    - '1.0000'
-- :text: ''
-  :name: :other
-  :samples:
-  - :type: "@integer"
-    :samples:
-    - '2'
-    - '3'
-    - '4'
-    - '5'
-    - '6'
-    - '7'
-    - '8'
-    - '9'
-    - '10'
-    - '11'
-    - '12'
-    - '13'
-    - '14'
-    - '15'
-    - '16'
-    - '17'
-    - '100'
-    - '1000'
-    - '10000'
-    - '100000'
-    - '1000000'
-  - :type: "@decimal"
-    :samples:
-    - '0.1'
-    - '0.2'
-    - '0.3'
-    - '0.4'
-    - '0.5'
-    - '0.6'
-    - '0.7'
-    - '0.8'
-    - '0.9'
-    - '1.1'
-    - '1.2'
-    - '1.3'
-    - '1.4'
-    - '1.5'
-    - '1.6'
-    - '1.7'
-    - '10.0'
-    - '100.0'
-    - '1000.0'
-    - '10000.0'
-    - '100000.0'
-    - '1000000.0'
-? af/asa/az/bem/bez/bg/brx/ce/cgg/chr/ckb/dv/ee/el/eo/es/eu/fo/fur/gsw/ha/haw/hu/jgo/jmc/ka/kaj/kcg/kk/kkj/kl/ks/ksb/ku/ky/lb/lg/mas/mgo/ml/mn/nah/nb/nd/ne/nn/nnh/no/nr/ny/nyn/om/or/os/pap/ps/rm/rof/rwk/saq/sdh/seh/sn/so/sq/ss/ssy/st/syr/ta/te/teo/tig/tk/tn/tr/ts/ug/uz/ve/vo/vun/wae/xh/xog
+? af/an/asa/az/bem/bez/bg/brx/ce/cgg/chr/ckb/dv/ee/el/eo/es/eu/fo/fur/gsw/ha/haw/hu/jgo/jmc/ka/kaj/kcg/kk/kkj/kl/ks/ksb/ku/ky/lb/lg/mas/mgo/ml/mn/mr/nah/nb/nd/ne/nn/nnh/no/nr/ny/nyn/om/or/os/pap/ps/rm/rof/rwk/saq/sd/sdh/seh/sn/so/sq/ss/ssy/st/syr/ta/te/teo/tig/tk/tn/tr/ts/ug/uz/ve/vo/vun/wae/xh/xog
 : - :text: n = 1
     :name: :one
     :samples:
@@ -619,63 +627,6 @@ pt:
       - '10000.0'
       - '100000.0'
       - '1000000.0'
-pt_PT:
-- :text: n = 1 and v = 0
-  :name: :one
-  :samples:
-  - :type: "@integer"
-    :samples:
-    - '1'
-- :text: ''
-  :name: :other
-  :samples:
-  - :type: "@integer"
-    :samples:
-    - '0'
-    - '2'
-    - '3'
-    - '4'
-    - '5'
-    - '6'
-    - '7'
-    - '8'
-    - '9'
-    - '10'
-    - '11'
-    - '12'
-    - '13'
-    - '14'
-    - '15'
-    - '16'
-    - '100'
-    - '1000'
-    - '10000'
-    - '100000'
-    - '1000000'
-  - :type: "@decimal"
-    :samples:
-    - '0.0'
-    - '0.1'
-    - '0.2'
-    - '0.3'
-    - '0.4'
-    - '0.5'
-    - '0.6'
-    - '0.7'
-    - '0.8'
-    - '0.9'
-    - '1.0'
-    - '1.1'
-    - '1.2'
-    - '1.3'
-    - '1.4'
-    - '1.5'
-    - '10.0'
-    - '100.0'
-    - '1000.0'
-    - '10000.0'
-    - '100000.0'
-    - '1000000.0'
 da:
 - :text: n = 1 or t != 0 and i = 0,1
   :name: :one
@@ -831,19 +782,19 @@ is:
     - '100000.0'
     - '1000000.0'
 mk:
-- :text: v = 0 and i % 10 = 1 or f % 10 = 1
+- :text: v = 0 and i % 10 = 1 and i % 100 != 11 or f % 10 = 1 and f % 100 != 11
   :name: :one
   :samples:
   - :type: "@integer"
     :samples:
     - '1'
-    - '11'
     - '21'
     - '31'
     - '41'
     - '51'
     - '61'
     - '71'
+    - '81'
     - '101'
     - '1001'
   - :type: "@decimal"
@@ -874,12 +825,12 @@ mk:
     - '8'
     - '9'
     - '10'
+    - '11'
     - '12'
     - '13'
     - '14'
     - '15'
     - '16'
-    - '17'
     - '100'
     - '1000'
     - '10000'
@@ -909,7 +860,7 @@ mk:
     - '10000.0'
     - '100000.0'
     - '1000000.0'
-fil/tl:
+ceb/fil/tl:
 - :text: v = 0 and i = 1,2,3 or v = 0 and i % 10 != 4,6,9 or v != 0 and f % 10 !=
     4,6,9
   :name: :one
@@ -1267,7 +1218,7 @@ ksh:
     - '10000.0'
     - '100000.0'
     - '1000000.0'
-iu/kw/naq/se/sma/smi/smj/smn/sms:
+iu/naq/sat/se/sma/smi/smj/smn/sms:
 - :text: n = 1
   :name: :one
   :samples:
@@ -1457,7 +1408,7 @@ mo/ro:
   - :type: "@integer"
     :samples:
     - '1'
-- :text: v != 0 or n = 0 or n != 1 and n % 100 = 1..19
+- :text: v != 0 or n = 0 or n % 100 = 2..19
   :name: :few
   :samples:
   - :type: "@integer"
@@ -1478,8 +1429,8 @@ mo/ro:
     - '14'
     - '15'
     - '16'
-    - '101'
-    - '1001'
+    - '102'
+    - '1002'
   - :type: "@decimal"
     :samples:
     - '0.0'
@@ -1654,6 +1605,113 @@ bs/hr/sh/sr:
     - '10000.0'
     - '100000.0'
     - '1000000.0'
+fr:
+- :text: i = 0,1
+  :name: :one
+  :samples:
+  - :type: "@integer"
+    :samples:
+    - '0'
+    - '1'
+  - :type: "@decimal"
+    :samples:
+    - '0.0'
+    - '0.1'
+    - '0.2'
+    - '0.3'
+    - '0.4'
+    - '0.5'
+    - '0.6'
+    - '0.7'
+    - '0.8'
+    - '0.9'
+    - '1.0'
+    - '1.1'
+    - '1.2'
+    - '1.3'
+    - '1.4'
+    - '1.5'
+- :text: e = 0 and i != 0 and i % 1000000 = 0 and v = 0 or e != 0..5
+  :name: :many
+  :samples:
+  - :type: "@integer"
+    :samples:
+    - '1000000'
+    - 1e6
+    - 2e6
+    - 3e6
+    - 4e6
+    - 5e6
+    - 6e6
+  - :type: "@decimal"
+    :samples:
+    - 1.0000001e6
+    - 1.1e6
+    - 2.0000001e6
+    - 2.1e6
+    - 3.0000001e6
+    - 3.1e6
+- :text: ''
+  :name: :other
+  :samples:
+  - :type: "@integer"
+    :samples:
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+    - '10'
+    - '11'
+    - '12'
+    - '13'
+    - '14'
+    - '15'
+    - '16'
+    - '17'
+    - '100'
+    - '1000'
+    - '10000'
+    - '100000'
+    - 1e3
+    - 2e3
+    - 3e3
+    - 4e3
+    - 5e3
+    - 6e3
+  - :type: "@decimal"
+    :samples:
+    - '2.0'
+    - '2.1'
+    - '2.2'
+    - '2.3'
+    - '2.4'
+    - '2.5'
+    - '2.6'
+    - '2.7'
+    - '2.8'
+    - '2.9'
+    - '3.0'
+    - '3.1'
+    - '3.2'
+    - '3.3'
+    - '3.4'
+    - '3.5'
+    - '10.0'
+    - '100.0'
+    - '1000.0'
+    - '10000.0'
+    - '100000.0'
+    - '1000000.0'
+    - 1.0001e3
+    - 1.1e3
+    - 2.0001e3
+    - 2.1e3
+    - 3.0001e3
+    - 3.1e3
 gd:
 - :text: n = 1,11
   :name: :one
@@ -2828,6 +2886,7 @@ br:
     - '1000000.0'
     - '1000000.00'
     - '1000000.000'
+    - '1000000.0000'
 - :text: ''
   :name: :other
   :samples:
@@ -3103,7 +3162,158 @@ gv:
     - '23'
     - '103'
     - '1003'
-ar:
+kw:
+- :text: n = 0
+  :name: :zero
+  :samples:
+  - :type: "@integer"
+    :samples:
+    - '0'
+  - :type: "@decimal"
+    :samples:
+    - '0.0'
+    - '0.00'
+    - '0.000'
+    - '0.0000'
+- :text: n = 1
+  :name: :one
+  :samples:
+  - :type: "@integer"
+    :samples:
+    - '1'
+  - :type: "@decimal"
+    :samples:
+    - '1.0'
+    - '1.00'
+    - '1.000'
+    - '1.0000'
+- :text: n % 100 = 2,22,42,62,82 or n % 1000 = 0 and n % 100000 = 1000..20000,40000,60000,80000
+    or n != 0 and n % 1000000 = 100000
+  :name: :two
+  :samples:
+  - :type: "@integer"
+    :samples:
+    - '2'
+    - '22'
+    - '42'
+    - '62'
+    - '82'
+    - '102'
+    - '122'
+    - '142'
+    - '1000'
+    - '10000'
+    - '100000'
+  - :type: "@decimal"
+    :samples:
+    - '2.0'
+    - '22.0'
+    - '42.0'
+    - '62.0'
+    - '82.0'
+    - '102.0'
+    - '122.0'
+    - '142.0'
+    - '1000.0'
+    - '10000.0'
+    - '100000.0'
+- :text: n % 100 = 3,23,43,63,83
+  :name: :few
+  :samples:
+  - :type: "@integer"
+    :samples:
+    - '3'
+    - '23'
+    - '43'
+    - '63'
+    - '83'
+    - '103'
+    - '123'
+    - '143'
+    - '1003'
+  - :type: "@decimal"
+    :samples:
+    - '3.0'
+    - '23.0'
+    - '43.0'
+    - '63.0'
+    - '83.0'
+    - '103.0'
+    - '123.0'
+    - '143.0'
+    - '1003.0'
+- :text: n != 1 and n % 100 = 1,21,41,61,81
+  :name: :many
+  :samples:
+  - :type: "@integer"
+    :samples:
+    - '21'
+    - '41'
+    - '61'
+    - '81'
+    - '101'
+    - '121'
+    - '141'
+    - '161'
+    - '1001'
+  - :type: "@decimal"
+    :samples:
+    - '21.0'
+    - '41.0'
+    - '61.0'
+    - '81.0'
+    - '101.0'
+    - '121.0'
+    - '141.0'
+    - '161.0'
+    - '1001.0'
+- :text: ''
+  :name: :other
+  :samples:
+  - :type: "@integer"
+    :samples:
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+    - '10'
+    - '11'
+    - '12'
+    - '13'
+    - '14'
+    - '15'
+    - '16'
+    - '17'
+    - '18'
+    - '19'
+    - '100'
+    - '1004'
+    - '1000000'
+  - :type: "@decimal"
+    :samples:
+    - '0.1'
+    - '0.2'
+    - '0.3'
+    - '0.4'
+    - '0.5'
+    - '0.6'
+    - '0.7'
+    - '0.8'
+    - '0.9'
+    - '1.1'
+    - '1.2'
+    - '1.3'
+    - '1.4'
+    - '1.5'
+    - '1.6'
+    - '1.7'
+    - '10.0'
+    - '100.0'
+    - '1000.1'
+    - '1000000.0'
+ar/ars:
 - :text: n = 0
   :name: :zero
   :samples:

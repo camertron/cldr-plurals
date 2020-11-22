@@ -4,7 +4,7 @@ module CldrPlurals
   class RubyEmitter < Compiler::Emitter
     class << self
 
-      RUNTIME_VARS = %w(n i v w f t)
+      RUNTIME_VARS = %w(n i f t v w e)
 
       def emit_rules(rule_list)
         parts = rule_list.rules.map do |rule|
@@ -20,7 +20,7 @@ module CldrPlurals
       end
 
       def emit_rule_standalone(rule)
-        "lambda { |n, i, f, t, v, w| #{emit_rule(rule)} }"
+        "lambda { |#{RUNTIME_VARS.join(', ')}| #{emit_rule(rule)} }"
       end
 
       protected

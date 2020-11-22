@@ -1,8 +1,8 @@
 sudo: false
 language: ruby
 rvm:
-  - 1.9.3
-  - 2.0.0
-  - 2.1.0
-script: 'bundle exec rspec'
-before_install: gem install bundler
+  - 2.4
+  - 2.5
+  - 2.6
+  - 2.7
+script: scripts/travis.sh

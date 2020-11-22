@@ -7,6 +7,8 @@ require 'rspec/core/rake_task'
 require 'rubygems/package_task'
 
 require './lib/cldr-plurals'
+require './spec/samples'
+require 'cldr-plurals/javascript_runtime'
 
 Bundler::GemHelper.install_tasks
 
@@ -53,9 +55,7 @@ task :update_samples do
   require 'nokogiri'
   require 'yaml'
 
-  url = 'http://unicode.org/cldr/trac/browser/tags/release-29/' +
-    'common/supplemental/plurals.xml?format=txt'
-
+  url = 'https://raw.githubusercontent.com/unicode-org/cldr/release-38/common/supplemental/plurals.xml'
   doc = Nokogiri::XML(open(url).read)
 
   samples = (doc / 'pluralRules').each_with_object({}) do |rules, ret|
@@ -81,4 +81,65 @@ task :update_samples do
   File.open(File.join(File.dirname(__FILE__), 'spec/samples.yml'), 'w+') do |f|
     f.write(YAML.dump(samples))
   end
+end
+
+task :update_js_tests do
+  indented_source = CldrPlurals::JavascriptRuntime
+    .source
+    .split("\n")
+    .map { |line| "  #{line}" }
+    .join("\n")
+    .strip
+
+  result = ''.tap do |js|
+    js << "( () => {\n"
+    js << "  const runtime = #{indented_source}\n\n"
+    js << "  describe('javascript rules', () => {\n"
+
+    Samples.each_rule.with_index do |(locales, rule, samples), rule_idx|
+      js << "\n" if rule_idx > 0
+      js << "    describe('#{locales}', () => {\n"
+      js << "      const rule = #{CldrPlurals::JavascriptEmitter.emit_rule_standalone(rule)};\n\n"
+
+      samples.each_with_index do |sample_info, idx|
+        js << "\n" if idx > 0
+        js << "      describe('#{sample_info[:type]}', () => {\n"
+        sample_info[:samples].each do |sample|
+          js << "        it('#{sample}', () => {\n"
+          js << "          expect(rule(...runtime.buildArgsFor('#{sample}'))).toEqual(true);\n"
+          js << "        });\n"
+        end
+
+        js << "      });\n"
+      end
+
+      js << "    });\n"
+    end
+
+    js << "  });\n\n"
+
+    js << "  describe('javascript rule lists', () => {\n"
+
+    Samples.each_rule_list.with_index do |(rule_list, samples_per_name), idx|
+      js << "\n" if idx > 0
+      js << "    describe('#{rule_list.locale}', () => {\n"
+      js << "      const ruleList = #{rule_list.to_code(:javascript)};\n\n"
+
+      samples_per_name.each_pair do |name, samples|
+        samples.each do |sample|
+          js << "      it('#{name} #{sample}', () => {\n"
+          js << "        expect(ruleList('#{sample}', runtime)).toEqual('#{name}');\n"
+          js << "      });\n"
+        end
+      end
+
+      js << "    });\n"
+    end
+
+    js << "  });\n"
+
+    js << "})();\n"
+  end
+
+  File.write('./spec/javascript_sample_spec.js', result)
 end
