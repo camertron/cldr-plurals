@@ -1,5 +1,5 @@
 {
   "devDependencies": {
-    "cldr-plurals-runtime-js": "camertron/cldr-plurals-runtime-js#cldr38"
+    "cldr-plurals-runtime-js": "^1.2"
   }
 }
