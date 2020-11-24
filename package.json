@@ -1,6 +1,5 @@
 {
   "devDependencies": {
-    "jasmine-node": "^3.0.0",
     "cldr-plurals-runtime-js": "camertron/cldr-plurals-runtime-js#cldr38"
   }
 }
