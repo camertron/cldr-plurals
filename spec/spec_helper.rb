@@ -6,5 +6,4 @@ require 'cldr-plurals'
 require './spec/samples'
 
 RSpec.configure do |config|
-  config.mock_with :rr
 end

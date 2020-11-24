@@ -1,86 +1,9 @@
 ( () => {
-  const runtime = (function(context) {
-    this.buildArgsFor = function(num_str) {
-      return [
-        this.n(num_str), this.i(num_str), this.f(num_str),
-        this.t(num_str), this.v(num_str), this.w(num_str)
-      ];
-    }
-  
-    this.n = function(str) {
-      if (str.indexOf('.') > -1) {
-        return this.toNum(this._n(str).replace(/([0]+\.$)/, ''));
-      } else {
-        return this.toNum(this._n(str));
-      }
-    }
-  
-    this.i = function(str) {
-      return this.toNum(this._i(str));
-    }
-  
-    this.f = function(str) {
-      return this.toNum(this._f(str));
-    }
-  
-    this.t = function(str) {
-      return this.toNum(this._t(str));
-    }
-  
-    this.v = function(str) {
-      return this.toNum(this._v(str));
-    }
-  
-    this.w = function(str) {
-      return this.toNum(this._w(str));
-    }
-  
-    // private
-  
-    this.toNum = function(str) {
-      if (str.length == 0) {
-        return 0;
-      } else {
-        return str.indexOf('.') > -1 ? parseFloat(str) : parseInt(str);
-      }
-    }
-  
-    // absolute value of the source number (integer and decimals).
-    this._n = function(str) {
-      return /(-)?(.*)/.exec(str)[2];
-    }
-  
-    /// integer digits of n.
-    this._i = function(str) {
-      return /([\d]+)(\..*)?/.exec(this._n(str))[1];
-    }
-  
-    // visible fractional digits in n, with trailing zeros.
-    this._f = function(str) {
-      return /([\d]+\.?)(.*)/.exec(this._n(str))[2];
-    }
-  
-    // visible fractional digits in n, without trailing zeros.
-    this._t = function(str) {
-      return this._f(str).replace(/([0]+$)/, '');
-    }
-  
-    // number of visible fraction digits in n, with trailing zeros.
-    this._v = function(str) {
-      return this._f(str).length.toString();
-    }
-  
-    // number of visible fraction digits in n, without trailing zeros.
-    this._w = function(str) {
-      return this._t(str).length.toString();
-    }
-  
-    return this;
-  }).call({})
+  const runtime = require('cldr-plurals-runtime-js');
 
   describe('javascript rules', () => {
-    describe('am/as/bn/doi/fa/gu/hi/kn/pcm/zu', () => {
-      const rule = (function(n, i, f, t, v, w) { return (i == 0 || n == 1); });
+    describe('locales: am/as/bn/doi/fa/gu/hi/kn/pcm/zu, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (i == 0 || n == 1); });
 
       describe('@integer', () => {
         it('0', () => {
@@ -143,8 +66,8 @@
       });
     });
 
-    describe('ff/hy/kab', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((i == 0) || (i == 1)); });
+    describe('locales: ff/hy/kab, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((i == 0) || (i == 1)); });
 
       describe('@integer', () => {
         it('0', () => {
@@ -207,8 +130,8 @@
       });
     });
 
-    describe('pt', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((Math.floor(i) === i) && (i >= 0) && (i <= 1)); });
+    describe('locales: pt, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((Math.floor(i) === i) && (i >= 0) && (i <= 1)); });
 
       describe('@integer', () => {
         it('0', () => {
@@ -271,8 +194,8 @@
       });
     });
 
-    describe('ast/ca/de/en/et/fi/fy/gl/ia/io/it/ji/lij/nl/pt_PT/sc/scn/sv/sw/ur/yi', () => {
-      const rule = (function(n, i, f, t, v, w) { return (i == 1 && v == 0); });
+    describe('locales: ast/ca/de/en/et/fi/fy/gl/ia/io/it/ji/lij/nl/pt_PT/sc/scn/sv/sw/ur/yi, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (i == 1 && v == 0); });
 
       describe('@integer', () => {
         it('1', () => {
@@ -281,8 +204,8 @@
       });
     });
 
-    describe('si', () => {
-      const rule = (function(n, i, f, t, v, w) { return (((n == 0) || (n == 1)) || (i == 0 && f == 1)); });
+    describe('locales: si, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (((n == 0) || (n == 1)) || (i == 0 && f == 1)); });
 
       describe('@integer', () => {
         it('0', () => {
@@ -333,8 +256,8 @@
       });
     });
 
-    describe('ak/bho/guw/ln/mg/nso/pa/ti/wa', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((Math.floor(n) === n) && (n >= 0) && (n <= 1)); });
+    describe('locales: ak/bho/guw/ln/mg/nso/pa/ti/wa, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((Math.floor(n) === n) && (n >= 0) && (n <= 1)); });
 
       describe('@integer', () => {
         it('0', () => {
@@ -373,8 +296,8 @@
       });
     });
 
-    describe('tzm', () => {
-      const rule = (function(n, i, f, t, v, w) { return (((Math.floor(n) === n) && (n >= 0) && (n <= 1)) || ((Math.floor(n) === n) && (n >= 11) && (n <= 99))); });
+    describe('locales: tzm, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (((Math.floor(n) === n) && (n >= 0) && (n <= 1)) || ((Math.floor(n) === n) && (n >= 11) && (n <= 99))); });
 
       describe('@integer', () => {
         it('0', () => {
@@ -479,8 +402,8 @@
       });
     });
 
-    describe('af/an/asa/az/bem/bez/bg/brx/ce/cgg/chr/ckb/dv/ee/el/eo/es/eu/fo/fur/gsw/ha/haw/hu/jgo/jmc/ka/kaj/kcg/kk/kkj/kl/ks/ksb/ku/ky/lb/lg/mas/mgo/ml/mn/mr/nah/nb/nd/ne/nn/nnh/no/nr/ny/nyn/om/or/os/pap/ps/rm/rof/rwk/saq/sd/sdh/seh/sn/so/sq/ss/ssy/st/syr/ta/te/teo/tig/tk/tn/tr/ts/ug/uz/ve/vo/vun/wae/xh/xog', () => {
-      const rule = (function(n, i, f, t, v, w) { return n == 1; });
+    describe('locales: af/an/asa/az/bem/bez/bg/brx/ce/cgg/chr/ckb/dv/ee/el/eo/es/eu/fo/fur/gsw/ha/haw/hu/jgo/jmc/ka/kaj/kcg/kk/kkj/kl/ks/ksb/ku/ky/lb/lg/mas/mgo/ml/mn/mr/nah/nb/nd/ne/nn/nnh/no/nr/ny/nyn/om/or/os/pap/ps/rm/rof/rwk/saq/sd/sdh/seh/sn/so/sq/ss/ssy/st/syr/ta/te/teo/tig/tk/tn/tr/ts/ug/uz/ve/vo/vun/wae/xh/xog, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return n == 1; });
 
       describe('@integer', () => {
         it('1', () => {
@@ -504,8 +427,8 @@
       });
     });
 
-    describe('da', () => {
-      const rule = (function(n, i, f, t, v, w) { return (n == 1 || (t != 0 && ((i == 0) || (i == 1)))); });
+    describe('locales: da, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (n == 1 || (t != 0 && ((i == 0) || (i == 1)))); });
 
       describe('@integer', () => {
         it('1', () => {
@@ -565,8 +488,8 @@
       });
     });
 
-    describe('is', () => {
-      const rule = (function(n, i, f, t, v, w) { return (((t == 0 && i % 10 == 1) && i % 100 != 11) || t != 0); });
+    describe('locales: is, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (((t == 0 && i % 10 == 1) && i % 100 != 11) || t != 0); });
 
       describe('@integer', () => {
         it('1', () => {
@@ -662,8 +585,8 @@
       });
     });
 
-    describe('mk', () => {
-      const rule = (function(n, i, f, t, v, w) { return (((v == 0 && i % 10 == 1) && i % 100 != 11) || (f % 10 == 1 && f % 100 != 11)); });
+    describe('locales: mk, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (((v == 0 && i % 10 == 1) && i % 100 != 11) || (f % 10 == 1 && f % 100 != 11)); });
 
       describe('@integer', () => {
         it('1', () => {
@@ -735,8 +658,8 @@
       });
     });
 
-    describe('ceb/fil/tl', () => {
-      const rule = (function(n, i, f, t, v, w) { return (((v == 0 && ((i == 1) || (i == 2) || (i == 3))) || (v == 0 && ((i % 10 != 4) && (i % 10 != 6) && (i % 10 != 9)))) || (v != 0 && ((f % 10 != 4) && (f % 10 != 6) && (f % 10 != 9)))); });
+    describe('locales: ceb/fil/tl, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (((v == 0 && ((i == 1) || (i == 2) || (i == 3))) || (v == 0 && ((i % 10 != 4) && (i % 10 != 6) && (i % 10 != 9)))) || (v != 0 && ((f % 10 != 4) && (f % 10 != 6) && (f % 10 != 9)))); });
 
       describe('@integer', () => {
         it('0', () => {
@@ -874,8 +797,8 @@
       });
     });
 
-    describe('lv/prg', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((n % 10 == 0 || ((Math.floor(n % 100) === n % 100) && (n % 100 >= 11) && (n % 100 <= 19))) || (v == 2 && ((Math.floor(f % 100) === f % 100) && (f % 100 >= 11) && (f % 100 <= 19)))); });
+    describe('locales: lv/prg, rule: zero;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((n % 10 == 0 || ((Math.floor(n % 100) === n % 100) && (n % 100 >= 11) && (n % 100 <= 19))) || (v == 2 && ((Math.floor(f % 100) === f % 100) && (f % 100 >= 11) && (f % 100 <= 19)))); });
 
       describe('@integer', () => {
         it('0', () => {
@@ -986,8 +909,8 @@
       });
     });
 
-    describe('lv/prg', () => {
-      const rule = (function(n, i, f, t, v, w) { return (((n % 10 == 1 && n % 100 != 11) || ((v == 2 && f % 10 == 1) && f % 100 != 11)) || (v != 2 && f % 10 == 1)); });
+    describe('locales: lv/prg, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (((n % 10 == 1 && n % 100 != 11) || ((v == 2 && f % 10 == 1) && f % 100 != 11)) || (v != 2 && f % 10 == 1)); });
 
       describe('@integer', () => {
         it('1', () => {
@@ -1062,8 +985,8 @@
       });
     });
 
-    describe('lag', () => {
-      const rule = (function(n, i, f, t, v, w) { return n == 0; });
+    describe('locales: lag, rule: zero;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return n == 0; });
 
       describe('@integer', () => {
         it('0', () => {
@@ -1087,8 +1010,8 @@
       });
     });
 
-    describe('lag', () => {
-      const rule = (function(n, i, f, t, v, w) { return (((i == 0) || (i == 1)) && n != 0); });
+    describe('locales: lag, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (((i == 0) || (i == 1)) && n != 0); });
 
       describe('@integer', () => {
         it('1', () => {
@@ -1148,8 +1071,8 @@
       });
     });
 
-    describe('ksh', () => {
-      const rule = (function(n, i, f, t, v, w) { return n == 0; });
+    describe('locales: ksh, rule: zero;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return n == 0; });
 
       describe('@integer', () => {
         it('0', () => {
@@ -1173,8 +1096,8 @@
       });
     });
 
-    describe('ksh', () => {
-      const rule = (function(n, i, f, t, v, w) { return n == 1; });
+    describe('locales: ksh, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return n == 1; });
 
       describe('@integer', () => {
         it('1', () => {
@@ -1198,8 +1121,8 @@
       });
     });
 
-    describe('iu/naq/sat/se/sma/smi/smj/smn/sms', () => {
-      const rule = (function(n, i, f, t, v, w) { return n == 1; });
+    describe('locales: iu/naq/sat/se/sma/smi/smj/smn/sms, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return n == 1; });
 
       describe('@integer', () => {
         it('1', () => {
@@ -1223,8 +1146,8 @@
       });
     });
 
-    describe('iu/naq/sat/se/sma/smi/smj/smn/sms', () => {
-      const rule = (function(n, i, f, t, v, w) { return n == 2; });
+    describe('locales: iu/naq/sat/se/sma/smi/smj/smn/sms, rule: two;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return n == 2; });
 
       describe('@integer', () => {
         it('2', () => {
@@ -1248,8 +1171,8 @@
       });
     });
 
-    describe('shi', () => {
-      const rule = (function(n, i, f, t, v, w) { return (i == 0 || n == 1); });
+    describe('locales: shi, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (i == 0 || n == 1); });
 
       describe('@integer', () => {
         it('0', () => {
@@ -1312,8 +1235,8 @@
       });
     });
 
-    describe('shi', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((Math.floor(n) === n) && (n >= 2) && (n <= 10)); });
+    describe('locales: shi, rule: few;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((Math.floor(n) === n) && (n >= 2) && (n <= 10)); });
 
       describe('@integer', () => {
         it('2', () => {
@@ -1397,8 +1320,8 @@
       });
     });
 
-    describe('mo/ro', () => {
-      const rule = (function(n, i, f, t, v, w) { return (i == 1 && v == 0); });
+    describe('locales: mo/ro, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (i == 1 && v == 0); });
 
       describe('@integer', () => {
         it('1', () => {
@@ -1407,8 +1330,8 @@
       });
     });
 
-    describe('mo/ro', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((v != 0 || n == 0) || ((Math.floor(n % 100) === n % 100) && (n % 100 >= 2) && (n % 100 <= 19))); });
+    describe('locales: mo/ro, rule: few;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((v != 0 || n == 0) || ((Math.floor(n % 100) === n % 100) && (n % 100 >= 2) && (n % 100 <= 19))); });
 
       describe('@integer', () => {
         it('0', () => {
@@ -1537,8 +1460,8 @@
       });
     });
 
-    describe('bs/hr/sh/sr', () => {
-      const rule = (function(n, i, f, t, v, w) { return (((v == 0 && i % 10 == 1) && i % 100 != 11) || (f % 10 == 1 && f % 100 != 11)); });
+    describe('locales: bs/hr/sh/sr, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (((v == 0 && i % 10 == 1) && i % 100 != 11) || (f % 10 == 1 && f % 100 != 11)); });
 
       describe('@integer', () => {
         it('1', () => {
@@ -1610,8 +1533,8 @@
       });
     });
 
-    describe('bs/hr/sh/sr', () => {
-      const rule = (function(n, i, f, t, v, w) { return (((v == 0 && ((Math.floor(i % 10) === i % 10) && (i % 10 >= 2) && (i % 10 <= 4))) && !((Math.floor(i % 100) === i % 100) && (i % 100 >= 12) && (i % 100 <= 14))) || (((Math.floor(f % 10) === f % 10) && (f % 10 >= 2) && (f % 10 <= 4)) && !((Math.floor(f % 100) === f % 100) && (f % 100 >= 12) && (f % 100 <= 14)))); });
+    describe('locales: bs/hr/sh/sr, rule: few;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (((v == 0 && ((Math.floor(i % 10) === i % 10) && (i % 10 >= 2) && (i % 10 <= 4))) && !((Math.floor(i % 100) === i % 100) && (i % 100 >= 12) && (i % 100 <= 14))) || (((Math.floor(f % 10) === f % 10) && (f % 10 >= 2) && (f % 10 <= 4)) && !((Math.floor(f % 100) === f % 100) && (f % 100 >= 12) && (f % 100 <= 14)))); });
 
       describe('@integer', () => {
         it('2', () => {
@@ -1731,8 +1654,8 @@
       });
     });
 
-    describe('fr', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((i == 0) || (i == 1)); });
+    describe('locales: fr, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((i == 0) || (i == 1)); });
 
       describe('@integer', () => {
         it('0', () => {
@@ -1795,8 +1718,8 @@
       });
     });
 
-    describe('fr', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((((e == 0 && i != 0) && i % 1000000 == 0) && v == 0) || !((Math.floor(e) === e) && (e >= 0) && (e <= 5))); });
+    describe('locales: fr, rule: many;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((((e == 0 && i != 0) && i % 1000000 == 0) && v == 0) || !((Math.floor(e) === e) && (e >= 0) && (e <= 5))); });
 
       describe('@integer', () => {
         it('1000000', () => {
@@ -1844,8 +1767,8 @@
       });
     });
 
-    describe('gd', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((n == 1) || (n == 11)); });
+    describe('locales: gd, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((n == 1) || (n == 11)); });
 
       describe('@integer', () => {
         it('1', () => {
@@ -1881,8 +1804,8 @@
       });
     });
 
-    describe('gd', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((n == 2) || (n == 12)); });
+    describe('locales: gd, rule: two;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((n == 2) || (n == 12)); });
 
       describe('@integer', () => {
         it('2', () => {
@@ -1918,8 +1841,8 @@
       });
     });
 
-    describe('gd', () => {
-      const rule = (function(n, i, f, t, v, w) { return (((Math.floor(n) === n) && (n >= 3) && (n <= 10)) || ((Math.floor(n) === n) && (n >= 13) && (n <= 19))); });
+    describe('locales: gd, rule: few;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (((Math.floor(n) === n) && (n >= 3) && (n <= 10)) || ((Math.floor(n) === n) && (n >= 13) && (n <= 19))); });
 
       describe('@integer', () => {
         it('3', () => {
@@ -2021,8 +1944,8 @@
       });
     });
 
-    describe('sl', () => {
-      const rule = (function(n, i, f, t, v, w) { return (v == 0 && i % 100 == 1); });
+    describe('locales: sl, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (v == 0 && i % 100 == 1); });
 
       describe('@integer', () => {
         it('1', () => {
@@ -2055,8 +1978,8 @@
       });
     });
 
-    describe('sl', () => {
-      const rule = (function(n, i, f, t, v, w) { return (v == 0 && i % 100 == 2); });
+    describe('locales: sl, rule: two;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (v == 0 && i % 100 == 2); });
 
       describe('@integer', () => {
         it('2', () => {
@@ -2089,8 +2012,8 @@
       });
     });
 
-    describe('sl', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((v == 0 && ((Math.floor(i % 100) === i % 100) && (i % 100 >= 3) && (i % 100 <= 4))) || v != 0); });
+    describe('locales: sl, rule: few;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((v == 0 && ((Math.floor(i % 100) === i % 100) && (i % 100 >= 3) && (i % 100 <= 4))) || v != 0); });
 
       describe('@integer', () => {
         it('3', () => {
@@ -2216,8 +2139,8 @@
       });
     });
 
-    describe('dsb/hsb', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((v == 0 && i % 100 == 1) || f % 100 == 1); });
+    describe('locales: dsb/hsb, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((v == 0 && i % 100 == 1) || f % 100 == 1); });
 
       describe('@integer', () => {
         it('1', () => {
@@ -2286,8 +2209,8 @@
       });
     });
 
-    describe('dsb/hsb', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((v == 0 && i % 100 == 2) || f % 100 == 2); });
+    describe('locales: dsb/hsb, rule: two;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((v == 0 && i % 100 == 2) || f % 100 == 2); });
 
       describe('@integer', () => {
         it('2', () => {
@@ -2356,8 +2279,8 @@
       });
     });
 
-    describe('dsb/hsb', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((v == 0 && ((Math.floor(i % 100) === i % 100) && (i % 100 >= 3) && (i % 100 <= 4))) || ((Math.floor(f % 100) === f % 100) && (f % 100 >= 3) && (f % 100 <= 4))); });
+    describe('locales: dsb/hsb, rule: few;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((v == 0 && ((Math.floor(i % 100) === i % 100) && (i % 100 >= 3) && (i % 100 <= 4))) || ((Math.floor(f % 100) === f % 100) && (f % 100 >= 3) && (f % 100 <= 4))); });
 
       describe('@integer', () => {
         it('3', () => {
@@ -2474,8 +2397,8 @@
       });
     });
 
-    describe('he/iw', () => {
-      const rule = (function(n, i, f, t, v, w) { return (i == 1 && v == 0); });
+    describe('locales: he/iw, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (i == 1 && v == 0); });
 
       describe('@integer', () => {
         it('1', () => {
@@ -2484,8 +2407,8 @@
       });
     });
 
-    describe('he/iw', () => {
-      const rule = (function(n, i, f, t, v, w) { return (i == 2 && v == 0); });
+    describe('locales: he/iw, rule: two;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (i == 2 && v == 0); });
 
       describe('@integer', () => {
         it('2', () => {
@@ -2494,8 +2417,8 @@
       });
     });
 
-    describe('he/iw', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((v == 0 && !((Math.floor(n) === n) && (n >= 0) && (n <= 10))) && n % 10 == 0); });
+    describe('locales: he/iw, rule: many;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((v == 0 && !((Math.floor(n) === n) && (n >= 0) && (n <= 10))) && n % 10 == 0); });
 
       describe('@integer', () => {
         it('20', () => {
@@ -2540,8 +2463,8 @@
       });
     });
 
-    describe('cs/sk', () => {
-      const rule = (function(n, i, f, t, v, w) { return (i == 1 && v == 0); });
+    describe('locales: cs/sk, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (i == 1 && v == 0); });
 
       describe('@integer', () => {
         it('1', () => {
@@ -2550,8 +2473,8 @@
       });
     });
 
-    describe('cs/sk', () => {
-      const rule = (function(n, i, f, t, v, w) { return (((Math.floor(i) === i) && (i >= 2) && (i <= 4)) && v == 0); });
+    describe('locales: cs/sk, rule: few;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (((Math.floor(i) === i) && (i >= 2) && (i <= 4)) && v == 0); });
 
       describe('@integer', () => {
         it('2', () => {
@@ -2566,8 +2489,8 @@
       });
     });
 
-    describe('cs/sk', () => {
-      const rule = (function(n, i, f, t, v, w) { return v != 0; });
+    describe('locales: cs/sk, rule: many;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return v != 0; });
 
       describe('@decimal', () => {
         it('0.0', () => {
@@ -2639,8 +2562,8 @@
       });
     });
 
-    describe('pl', () => {
-      const rule = (function(n, i, f, t, v, w) { return (i == 1 && v == 0); });
+    describe('locales: pl, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (i == 1 && v == 0); });
 
       describe('@integer', () => {
         it('1', () => {
@@ -2649,8 +2572,8 @@
       });
     });
 
-    describe('pl', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((v == 0 && ((Math.floor(i % 10) === i % 10) && (i % 10 >= 2) && (i % 10 <= 4))) && !((Math.floor(i % 100) === i % 100) && (i % 100 >= 12) && (i % 100 <= 14))); });
+    describe('locales: pl, rule: few;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((v == 0 && ((Math.floor(i % 10) === i % 10) && (i % 10 >= 2) && (i % 10 <= 4))) && !((Math.floor(i % 100) === i % 100) && (i % 100 >= 12) && (i % 100 <= 14))); });
 
       describe('@integer', () => {
         it('2', () => {
@@ -2710,8 +2633,8 @@
       });
     });
 
-    describe('pl', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((((v == 0 && i != 1) && ((Math.floor(i % 10) === i % 10) && (i % 10 >= 0) && (i % 10 <= 1))) || (v == 0 && ((Math.floor(i % 10) === i % 10) && (i % 10 >= 5) && (i % 10 <= 9)))) || (v == 0 && ((Math.floor(i % 100) === i % 100) && (i % 100 >= 12) && (i % 100 <= 14)))); });
+    describe('locales: pl, rule: many;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((((v == 0 && i != 1) && ((Math.floor(i % 10) === i % 10) && (i % 10 >= 0) && (i % 10 <= 1))) || (v == 0 && ((Math.floor(i % 10) === i % 10) && (i % 10 >= 5) && (i % 10 <= 9)))) || (v == 0 && ((Math.floor(i % 100) === i % 100) && (i % 100 >= 12) && (i % 100 <= 14)))); });
 
       describe('@integer', () => {
         it('0', () => {
@@ -2780,8 +2703,8 @@
       });
     });
 
-    describe('be', () => {
-      const rule = (function(n, i, f, t, v, w) { return (n % 10 == 1 && n % 100 != 11); });
+    describe('locales: be, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (n % 10 == 1 && n % 100 != 11); });
 
       describe('@integer', () => {
         it('1', () => {
@@ -2850,8 +2773,8 @@
       });
     });
 
-    describe('be', () => {
-      const rule = (function(n, i, f, t, v, w) { return (((Math.floor(n % 10) === n % 10) && (n % 10 >= 2) && (n % 10 <= 4)) && !((Math.floor(n % 100) === n % 100) && (n % 100 >= 12) && (n % 100 <= 14))); });
+    describe('locales: be, rule: few;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (((Math.floor(n % 10) === n % 10) && (n % 10 >= 2) && (n % 10 <= 4)) && !((Math.floor(n % 100) === n % 100) && (n % 100 >= 12) && (n % 100 <= 14))); });
 
       describe('@integer', () => {
         it('2', () => {
@@ -2944,8 +2867,8 @@
       });
     });
 
-    describe('be', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((n % 10 == 0 || ((Math.floor(n % 10) === n % 10) && (n % 10 >= 5) && (n % 10 <= 9))) || ((Math.floor(n % 100) === n % 100) && (n % 100 >= 11) && (n % 100 <= 14))); });
+    describe('locales: be, rule: many;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((n % 10 == 0 || ((Math.floor(n % 10) === n % 10) && (n % 10 >= 5) && (n % 10 <= 9))) || ((Math.floor(n % 100) === n % 100) && (n % 100 >= 11) && (n % 100 <= 14))); });
 
       describe('@integer', () => {
         it('0', () => {
@@ -3056,8 +2979,8 @@
       });
     });
 
-    describe('lt', () => {
-      const rule = (function(n, i, f, t, v, w) { return (n % 10 == 1 && !((Math.floor(n % 100) === n % 100) && (n % 100 >= 11) && (n % 100 <= 19))); });
+    describe('locales: lt, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (n % 10 == 1 && !((Math.floor(n % 100) === n % 100) && (n % 100 >= 11) && (n % 100 <= 19))); });
 
       describe('@integer', () => {
         it('1', () => {
@@ -3126,8 +3049,8 @@
       });
     });
 
-    describe('lt', () => {
-      const rule = (function(n, i, f, t, v, w) { return (((Math.floor(n % 10) === n % 10) && (n % 10 >= 2) && (n % 10 <= 9)) && !((Math.floor(n % 100) === n % 100) && (n % 100 >= 11) && (n % 100 <= 19))); });
+    describe('locales: lt, rule: few;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (((Math.floor(n % 10) === n % 10) && (n % 10 >= 2) && (n % 10 <= 9)) && !((Math.floor(n % 100) === n % 100) && (n % 100 >= 11) && (n % 100 <= 19))); });
 
       describe('@integer', () => {
         it('2', () => {
@@ -3223,8 +3146,8 @@
       });
     });
 
-    describe('lt', () => {
-      const rule = (function(n, i, f, t, v, w) { return f != 0; });
+    describe('locales: lt, rule: many;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return f != 0; });
 
       describe('@decimal', () => {
         it('0.1', () => {
@@ -3287,8 +3210,8 @@
       });
     });
 
-    describe('mt', () => {
-      const rule = (function(n, i, f, t, v, w) { return n == 1; });
+    describe('locales: mt, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return n == 1; });
 
       describe('@integer', () => {
         it('1', () => {
@@ -3312,8 +3235,8 @@
       });
     });
 
-    describe('mt', () => {
-      const rule = (function(n, i, f, t, v, w) { return (n == 0 || ((Math.floor(n % 100) === n % 100) && (n % 100 >= 2) && (n % 100 <= 10))); });
+    describe('locales: mt, rule: few;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (n == 0 || ((Math.floor(n % 100) === n % 100) && (n % 100 >= 2) && (n % 100 <= 10))); });
 
       describe('@integer', () => {
         it('0', () => {
@@ -3406,8 +3329,8 @@
       });
     });
 
-    describe('mt', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((Math.floor(n % 100) === n % 100) && (n % 100 >= 11) && (n % 100 <= 19)); });
+    describe('locales: mt, rule: many;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((Math.floor(n % 100) === n % 100) && (n % 100 >= 11) && (n % 100 <= 19)); });
 
       describe('@integer', () => {
         it('11', () => {
@@ -3497,8 +3420,8 @@
       });
     });
 
-    describe('ru/uk', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((v == 0 && i % 10 == 1) && i % 100 != 11); });
+    describe('locales: ru/uk, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((v == 0 && i % 10 == 1) && i % 100 != 11); });
 
       describe('@integer', () => {
         it('1', () => {
@@ -3534,8 +3457,8 @@
       });
     });
 
-    describe('ru/uk', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((v == 0 && ((Math.floor(i % 10) === i % 10) && (i % 10 >= 2) && (i % 10 <= 4))) && !((Math.floor(i % 100) === i % 100) && (i % 100 >= 12) && (i % 100 <= 14))); });
+    describe('locales: ru/uk, rule: few;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((v == 0 && ((Math.floor(i % 10) === i % 10) && (i % 10 >= 2) && (i % 10 <= 4))) && !((Math.floor(i % 100) === i % 100) && (i % 100 >= 12) && (i % 100 <= 14))); });
 
       describe('@integer', () => {
         it('2', () => {
@@ -3595,8 +3518,8 @@
       });
     });
 
-    describe('ru/uk', () => {
-      const rule = (function(n, i, f, t, v, w) { return (((v == 0 && i % 10 == 0) || (v == 0 && ((Math.floor(i % 10) === i % 10) && (i % 10 >= 5) && (i % 10 <= 9)))) || (v == 0 && ((Math.floor(i % 100) === i % 100) && (i % 100 >= 11) && (i % 100 <= 14)))); });
+    describe('locales: ru/uk, rule: many;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (((v == 0 && i % 10 == 0) || (v == 0 && ((Math.floor(i % 10) === i % 10) && (i % 10 >= 5) && (i % 10 <= 9)))) || (v == 0 && ((Math.floor(i % 100) === i % 100) && (i % 100 >= 11) && (i % 100 <= 14)))); });
 
       describe('@integer', () => {
         it('0', () => {
@@ -3665,8 +3588,8 @@
       });
     });
 
-    describe('br', () => {
-      const rule = (function(n, i, f, t, v, w) { return (n % 10 == 1 && ((n % 100 != 11) && (n % 100 != 71) && (n % 100 != 91))); });
+    describe('locales: br, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (n % 10 == 1 && ((n % 100 != 11) && (n % 100 != 71) && (n % 100 != 91))); });
 
       describe('@integer', () => {
         it('1', () => {
@@ -3729,8 +3652,8 @@
       });
     });
 
-    describe('br', () => {
-      const rule = (function(n, i, f, t, v, w) { return (n % 10 == 2 && ((n % 100 != 12) && (n % 100 != 72) && (n % 100 != 92))); });
+    describe('locales: br, rule: two;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (n % 10 == 2 && ((n % 100 != 12) && (n % 100 != 72) && (n % 100 != 92))); });
 
       describe('@integer', () => {
         it('2', () => {
@@ -3793,8 +3716,8 @@
       });
     });
 
-    describe('br', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((((Math.floor(n % 10) === n % 10) && (n % 10 >= 3) && (n % 10 <= 4)) || (n % 10 == 9)) && (!((Math.floor(n % 100) === n % 100) && (n % 100 >= 10) && (n % 100 <= 19)) && !((Math.floor(n % 100) === n % 100) && (n % 100 >= 70) && (n % 100 <= 79)) && !((Math.floor(n % 100) === n % 100) && (n % 100 >= 90) && (n % 100 <= 99)))); });
+    describe('locales: br, rule: few;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((((Math.floor(n % 10) === n % 10) && (n % 10 >= 3) && (n % 10 <= 4)) || (n % 10 == 9)) && (!((Math.floor(n % 100) === n % 100) && (n % 100 >= 10) && (n % 100 <= 19)) && !((Math.floor(n % 100) === n % 100) && (n % 100 >= 70) && (n % 100 <= 79)) && !((Math.floor(n % 100) === n % 100) && (n % 100 >= 90) && (n % 100 <= 99)))); });
 
       describe('@integer', () => {
         it('3', () => {
@@ -3875,8 +3798,8 @@
       });
     });
 
-    describe('br', () => {
-      const rule = (function(n, i, f, t, v, w) { return (n != 0 && n % 1000000 == 0); });
+    describe('locales: br, rule: many;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (n != 0 && n % 1000000 == 0); });
 
       describe('@integer', () => {
         it('1000000', () => {
@@ -3900,8 +3823,8 @@
       });
     });
 
-    describe('ga', () => {
-      const rule = (function(n, i, f, t, v, w) { return n == 1; });
+    describe('locales: ga, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return n == 1; });
 
       describe('@integer', () => {
         it('1', () => {
@@ -3925,8 +3848,8 @@
       });
     });
 
-    describe('ga', () => {
-      const rule = (function(n, i, f, t, v, w) { return n == 2; });
+    describe('locales: ga, rule: two;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return n == 2; });
 
       describe('@integer', () => {
         it('2', () => {
@@ -3950,8 +3873,8 @@
       });
     });
 
-    describe('ga', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((Math.floor(n) === n) && (n >= 3) && (n <= 6)); });
+    describe('locales: ga, rule: few;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((Math.floor(n) === n) && (n >= 3) && (n <= 6)); });
 
       describe('@integer', () => {
         it('3', () => {
@@ -4020,8 +3943,8 @@
       });
     });
 
-    describe('ga', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((Math.floor(n) === n) && (n >= 7) && (n <= 10)); });
+    describe('locales: ga, rule: many;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((Math.floor(n) === n) && (n >= 7) && (n <= 10)); });
 
       describe('@integer', () => {
         it('7', () => {
@@ -4090,8 +4013,8 @@
       });
     });
 
-    describe('gv', () => {
-      const rule = (function(n, i, f, t, v, w) { return (v == 0 && i % 10 == 1); });
+    describe('locales: gv, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (v == 0 && i % 10 == 1); });
 
       describe('@integer', () => {
         it('1', () => {
@@ -4127,8 +4050,8 @@
       });
     });
 
-    describe('gv', () => {
-      const rule = (function(n, i, f, t, v, w) { return (v == 0 && i % 10 == 2); });
+    describe('locales: gv, rule: two;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (v == 0 && i % 10 == 2); });
 
       describe('@integer', () => {
         it('2', () => {
@@ -4164,8 +4087,8 @@
       });
     });
 
-    describe('gv', () => {
-      const rule = (function(n, i, f, t, v, w) { return (v == 0 && ((i % 100 == 0) || (i % 100 == 20) || (i % 100 == 40) || (i % 100 == 60) || (i % 100 == 80))); });
+    describe('locales: gv, rule: few;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (v == 0 && ((i % 100 == 0) || (i % 100 == 20) || (i % 100 == 40) || (i % 100 == 60) || (i % 100 == 80))); });
 
       describe('@integer', () => {
         it('0', () => {
@@ -4207,8 +4130,8 @@
       });
     });
 
-    describe('gv', () => {
-      const rule = (function(n, i, f, t, v, w) { return v != 0; });
+    describe('locales: gv, rule: many;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return v != 0; });
 
       describe('@decimal', () => {
         it('0.0', () => {
@@ -4280,8 +4203,8 @@
       });
     });
 
-    describe('kw', () => {
-      const rule = (function(n, i, f, t, v, w) { return n == 0; });
+    describe('locales: kw, rule: zero;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return n == 0; });
 
       describe('@integer', () => {
         it('0', () => {
@@ -4305,8 +4228,8 @@
       });
     });
 
-    describe('kw', () => {
-      const rule = (function(n, i, f, t, v, w) { return n == 1; });
+    describe('locales: kw, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return n == 1; });
 
       describe('@integer', () => {
         it('1', () => {
@@ -4330,8 +4253,8 @@
       });
     });
 
-    describe('kw', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((((n % 100 == 2) || (n % 100 == 22) || (n % 100 == 42) || (n % 100 == 62) || (n % 100 == 82)) || (n % 1000 == 0 && (((Math.floor(n % 100000) === n % 100000) && (n % 100000 >= 1000) && (n % 100000 <= 20000)) || (n % 100000 == 40000) || (n % 100000 == 60000) || (n % 100000 == 80000)))) || (n != 0 && n % 1000000 == 100000)); });
+    describe('locales: kw, rule: two;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((((n % 100 == 2) || (n % 100 == 22) || (n % 100 == 42) || (n % 100 == 62) || (n % 100 == 82)) || (n % 1000 == 0 && (((Math.floor(n % 100000) === n % 100000) && (n % 100000 >= 1000) && (n % 100000 <= 20000)) || (n % 100000 == 40000) || (n % 100000 == 60000) || (n % 100000 == 80000)))) || (n != 0 && n % 1000000 == 100000)); });
 
       describe('@integer', () => {
         it('2', () => {
@@ -4406,8 +4329,8 @@
       });
     });
 
-    describe('kw', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((n % 100 == 3) || (n % 100 == 23) || (n % 100 == 43) || (n % 100 == 63) || (n % 100 == 83)); });
+    describe('locales: kw, rule: few;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((n % 100 == 3) || (n % 100 == 23) || (n % 100 == 43) || (n % 100 == 63) || (n % 100 == 83)); });
 
       describe('@integer', () => {
         it('3', () => {
@@ -4470,8 +4393,8 @@
       });
     });
 
-    describe('kw', () => {
-      const rule = (function(n, i, f, t, v, w) { return (n != 1 && ((n % 100 == 1) || (n % 100 == 21) || (n % 100 == 41) || (n % 100 == 61) || (n % 100 == 81))); });
+    describe('locales: kw, rule: many;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return (n != 1 && ((n % 100 == 1) || (n % 100 == 21) || (n % 100 == 41) || (n % 100 == 61) || (n % 100 == 81))); });
 
       describe('@integer', () => {
         it('21', () => {
@@ -4534,8 +4457,8 @@
       });
     });
 
-    describe('ar/ars', () => {
-      const rule = (function(n, i, f, t, v, w) { return n == 0; });
+    describe('locales: ar/ars, rule: zero;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return n == 0; });
 
       describe('@integer', () => {
         it('0', () => {
@@ -4559,8 +4482,8 @@
       });
     });
 
-    describe('ar/ars', () => {
-      const rule = (function(n, i, f, t, v, w) { return n == 1; });
+    describe('locales: ar/ars, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return n == 1; });
 
       describe('@integer', () => {
         it('1', () => {
@@ -4584,8 +4507,8 @@
       });
     });
 
-    describe('ar/ars', () => {
-      const rule = (function(n, i, f, t, v, w) { return n == 2; });
+    describe('locales: ar/ars, rule: two;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return n == 2; });
 
       describe('@integer', () => {
         it('2', () => {
@@ -4609,8 +4532,8 @@
       });
     });
 
-    describe('ar/ars', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((Math.floor(n % 100) === n % 100) && (n % 100 >= 3) && (n % 100 <= 10)); });
+    describe('locales: ar/ars, rule: few;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((Math.floor(n % 100) === n % 100) && (n % 100 >= 3) && (n % 100 <= 10)); });
 
       describe('@integer', () => {
         it('3', () => {
@@ -4700,8 +4623,8 @@
       });
     });
 
-    describe('ar/ars', () => {
-      const rule = (function(n, i, f, t, v, w) { return ((Math.floor(n % 100) === n % 100) && (n % 100 >= 11) && (n % 100 <= 99)); });
+    describe('locales: ar/ars, rule: many;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return ((Math.floor(n % 100) === n % 100) && (n % 100 >= 11) && (n % 100 <= 99)); });
 
       describe('@integer', () => {
         it('11', () => {
@@ -4794,8 +4717,8 @@
       });
     });
 
-    describe('cy', () => {
-      const rule = (function(n, i, f, t, v, w) { return n == 0; });
+    describe('locales: cy, rule: zero;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return n == 0; });
 
       describe('@integer', () => {
         it('0', () => {
@@ -4819,8 +4742,8 @@
       });
     });
 
-    describe('cy', () => {
-      const rule = (function(n, i, f, t, v, w) { return n == 1; });
+    describe('locales: cy, rule: one;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return n == 1; });
 
       describe('@integer', () => {
         it('1', () => {
@@ -4844,8 +4767,8 @@
       });
     });
 
-    describe('cy', () => {
-      const rule = (function(n, i, f, t, v, w) { return n == 2; });
+    describe('locales: cy, rule: two;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return n == 2; });
 
       describe('@integer', () => {
         it('2', () => {
@@ -4869,8 +4792,8 @@
       });
     });
 
-    describe('cy', () => {
-      const rule = (function(n, i, f, t, v, w) { return n == 3; });
+    describe('locales: cy, rule: few;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return n == 3; });
 
       describe('@integer', () => {
         it('3', () => {
@@ -4894,8 +4817,8 @@
       });
     });
 
-    describe('cy', () => {
-      const rule = (function(n, i, f, t, v, w) { return n == 6; });
+    describe('locales: cy, rule: many;', () => {
+      const rule = (function(n, i, f, t, v, w, e) { return n == 6; });
 
       describe('@integer', () => {
         it('6', () => {
@@ -4922,7 +4845,7 @@
 
   describe('javascript rule lists', () => {
     describe('bm/bo/dz/id/ig/ii/in/ja/jbo/jv/jw/kde/kea/km/ko/lkt/lo/ms/my/nqo/osa/root/sah/ses/sg/su/th/to/vi/wo/yo/yue/zh', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return 'other'; });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return 'other'; });
 
       it('other 0', () => {
         expect(ruleList('0', runtime)).toEqual('other');
@@ -5056,7 +4979,7 @@
     });
 
     describe('am/as/bn/doi/fa/gu/hi/kn/pcm/zu', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return ((i == 0 || n == 1) ? 'one' : 'other'); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return ((i == 0 || n == 1) ? 'one' : 'other'); });
 
       it('one 0', () => {
         expect(ruleList('0', runtime)).toEqual('one');
@@ -5244,7 +5167,7 @@
     });
 
     describe('ff/hy/kab', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return (((i == 0) || (i == 1)) ? 'one' : 'other'); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return (((i == 0) || (i == 1)) ? 'one' : 'other'); });
 
       it('one 0', () => {
         expect(ruleList('0', runtime)).toEqual('one');
@@ -5432,7 +5355,7 @@
     });
 
     describe('pt', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return (((Math.floor(i) === i) && (i >= 0) && (i <= 1)) ? 'one' : 'other'); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return (((Math.floor(i) === i) && (i >= 0) && (i <= 1)) ? 'one' : 'other'); });
 
       it('one 0', () => {
         expect(ruleList('0', runtime)).toEqual('one');
@@ -5620,7 +5543,7 @@
     });
 
     describe('ast/ca/de/en/et/fi/fy/gl/ia/io/it/ji/lij/nl/pt_PT/sc/scn/sv/sw/ur/yi', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return ((i == 1 && v == 0) ? 'one' : 'other'); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return ((i == 1 && v == 0) ? 'one' : 'other'); });
 
       it('one 1', () => {
         expect(ruleList('1', runtime)).toEqual('one');
@@ -5757,7 +5680,7 @@
     });
 
     describe('si', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return ((((n == 0) || (n == 1)) || (i == 0 && f == 1)) ? 'one' : 'other'); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return ((((n == 0) || (n == 1)) || (i == 0 && f == 1)) ? 'one' : 'other'); });
 
       it('one 0', () => {
         expect(ruleList('0', runtime)).toEqual('one');
@@ -5933,7 +5856,7 @@
     });
 
     describe('ak/bho/guw/ln/mg/nso/pa/ti/wa', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return (((Math.floor(n) === n) && (n >= 0) && (n <= 1)) ? 'one' : 'other'); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return (((Math.floor(n) === n) && (n >= 0) && (n <= 1)) ? 'one' : 'other'); });
 
       it('one 0', () => {
         expect(ruleList('0', runtime)).toEqual('one');
@@ -6097,7 +6020,7 @@
     });
 
     describe('tzm', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return ((((Math.floor(n) === n) && (n >= 0) && (n <= 1)) || ((Math.floor(n) === n) && (n >= 11) && (n <= 99))) ? 'one' : 'other'); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return ((((Math.floor(n) === n) && (n >= 0) && (n <= 1)) || ((Math.floor(n) === n) && (n >= 11) && (n <= 99))) ? 'one' : 'other'); });
 
       it('one 0', () => {
         expect(ruleList('0', runtime)).toEqual('one');
@@ -6324,7 +6247,7 @@
     });
 
     describe('af/an/asa/az/bem/bez/bg/brx/ce/cgg/chr/ckb/dv/ee/el/eo/es/eu/fo/fur/gsw/ha/haw/hu/jgo/jmc/ka/kaj/kcg/kk/kkj/kl/ks/ksb/ku/ky/lb/lg/mas/mgo/ml/mn/mr/nah/nb/nd/ne/nn/nnh/no/nr/ny/nyn/om/or/os/pap/ps/rm/rof/rwk/saq/sd/sdh/seh/sn/so/sq/ss/ssy/st/syr/ta/te/teo/tig/tk/tn/tr/ts/ug/uz/ve/vo/vun/wae/xh/xog', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return (n == 1 ? 'one' : 'other'); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return (n == 1 ? 'one' : 'other'); });
 
       it('one 1', () => {
         expect(ruleList('1', runtime)).toEqual('one');
@@ -6473,7 +6396,7 @@
     });
 
     describe('da', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return ((n == 1 || (t != 0 && ((i == 0) || (i == 1)))) ? 'one' : 'other'); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return ((n == 1 || (t != 0 && ((i == 0) || (i == 1)))) ? 'one' : 'other'); });
 
       it('one 1', () => {
         expect(ruleList('1', runtime)).toEqual('one');
@@ -6658,7 +6581,7 @@
     });
 
     describe('is', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return ((((t == 0 && i % 10 == 1) && i % 100 != 11) || t != 0) ? 'one' : 'other'); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return ((((t == 0 && i % 10 == 1) && i % 100 != 11) || t != 0) ? 'one' : 'other'); });
 
       it('one 1', () => {
         expect(ruleList('1', runtime)).toEqual('one');
@@ -6855,7 +6778,7 @@
     });
 
     describe('mk', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return ((((v == 0 && i % 10 == 1) && i % 100 != 11) || (f % 10 == 1 && f % 100 != 11)) ? 'one' : 'other'); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return ((((v == 0 && i % 10 == 1) && i % 100 != 11) || (f % 10 == 1 && f % 100 != 11)) ? 'one' : 'other'); });
 
       it('one 1', () => {
         expect(ruleList('1', runtime)).toEqual('one');
@@ -7052,7 +6975,7 @@
     });
 
     describe('ceb/fil/tl', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return ((((v == 0 && ((i == 1) || (i == 2) || (i == 3))) || (v == 0 && ((i % 10 != 4) && (i % 10 != 6) && (i % 10 != 9)))) || (v != 0 && ((f % 10 != 4) && (f % 10 != 6) && (f % 10 != 9)))) ? 'one' : 'other'); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return ((((v == 0 && ((i == 1) || (i == 2) || (i == 3))) || (v == 0 && ((i % 10 != 4) && (i % 10 != 6) && (i % 10 != 9)))) || (v != 0 && ((f % 10 != 4) && (f % 10 != 6) && (f % 10 != 9)))) ? 'one' : 'other'); });
 
       it('one 0', () => {
         expect(ruleList('0', runtime)).toEqual('one');
@@ -7249,7 +7172,7 @@
     });
 
     describe('lv/prg', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return (((n % 10 == 0 || ((Math.floor(n % 100) === n % 100) && (n % 100 >= 11) && (n % 100 <= 19))) || (v == 2 && ((Math.floor(f % 100) === f % 100) && (f % 100 >= 11) && (f % 100 <= 19)))) ? 'zero' : ((((n % 10 == 1 && n % 100 != 11) || ((v == 2 && f % 10 == 1) && f % 100 != 11)) || (v != 2 && f % 10 == 1)) ? 'one' : 'other')); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return (((n % 10 == 0 || ((Math.floor(n % 100) === n % 100) && (n % 100 >= 11) && (n % 100 <= 19))) || (v == 2 && ((Math.floor(f % 100) === f % 100) && (f % 100 >= 11) && (f % 100 <= 19)))) ? 'zero' : ((((n % 10 == 1 && n % 100 != 11) || ((v == 2 && f % 10 == 1) && f % 100 != 11)) || (v != 2 && f % 10 == 1)) ? 'one' : 'other')); });
 
       it('zero 0', () => {
         expect(ruleList('0', runtime)).toEqual('zero');
@@ -7533,7 +7456,7 @@
     });
 
     describe('lag', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return (n == 0 ? 'zero' : ((((i == 0) || (i == 1)) && n != 0) ? 'one' : 'other')); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return (n == 0 ? 'zero' : ((((i == 0) || (i == 1)) && n != 0) ? 'one' : 'other')); });
 
       it('zero 0', () => {
         expect(ruleList('0', runtime)).toEqual('zero');
@@ -7733,7 +7656,7 @@
     });
 
     describe('ksh', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return (n == 0 ? 'zero' : (n == 1 ? 'one' : 'other')); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return (n == 0 ? 'zero' : (n == 1 ? 'one' : 'other')); });
 
       it('zero 0', () => {
         expect(ruleList('0', runtime)).toEqual('zero');
@@ -7897,7 +7820,7 @@
     });
 
     describe('iu/naq/sat/se/sma/smi/smj/smn/sms', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return (n == 1 ? 'one' : (n == 2 ? 'two' : 'other')); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return (n == 1 ? 'one' : (n == 2 ? 'two' : 'other')); });
 
       it('one 1', () => {
         expect(ruleList('1', runtime)).toEqual('one');
@@ -8061,7 +7984,7 @@
     });
 
     describe('shi', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return ((i == 0 || n == 1) ? 'one' : (((Math.floor(n) === n) && (n >= 2) && (n <= 10)) ? 'few' : 'other')); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return ((i == 0 || n == 1) ? 'one' : (((Math.floor(n) === n) && (n >= 2) && (n <= 10)) ? 'few' : 'other')); });
 
       it('one 0', () => {
         expect(ruleList('0', runtime)).toEqual('one');
@@ -8324,7 +8247,7 @@
     });
 
     describe('mo/ro', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return ((i == 1 && v == 0) ? 'one' : (((v != 0 || n == 0) || ((Math.floor(n % 100) === n % 100) && (n % 100 >= 2) && (n % 100 <= 19))) ? 'few' : 'other')); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return ((i == 1 && v == 0) ? 'one' : (((v != 0 || n == 0) || ((Math.floor(n % 100) === n % 100) && (n % 100 >= 2) && (n % 100 <= 19))) ? 'few' : 'other')); });
 
       it('one 1', () => {
         expect(ruleList('1', runtime)).toEqual('one');
@@ -8515,7 +8438,7 @@
     });
 
     describe('bs/hr/sh/sr', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return ((((v == 0 && i % 10 == 1) && i % 100 != 11) || (f % 10 == 1 && f % 100 != 11)) ? 'one' : ((((v == 0 && ((Math.floor(i % 10) === i % 10) && (i % 10 >= 2) && (i % 10 <= 4))) && !((Math.floor(i % 100) === i % 100) && (i % 100 >= 12) && (i % 100 <= 14))) || (((Math.floor(f % 10) === f % 10) && (f % 10 >= 2) && (f % 10 <= 4)) && !((Math.floor(f % 100) === f % 100) && (f % 100 >= 12) && (f % 100 <= 14)))) ? 'few' : 'other')); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return ((((v == 0 && i % 10 == 1) && i % 100 != 11) || (f % 10 == 1 && f % 100 != 11)) ? 'one' : ((((v == 0 && ((Math.floor(i % 10) === i % 10) && (i % 10 >= 2) && (i % 10 <= 4))) && !((Math.floor(i % 100) === i % 100) && (i % 100 >= 12) && (i % 100 <= 14))) || (((Math.floor(f % 10) === f % 10) && (f % 10 >= 2) && (f % 10 <= 4)) && !((Math.floor(f % 100) === f % 100) && (f % 100 >= 12) && (f % 100 <= 14)))) ? 'few' : 'other')); });
 
       it('one 1', () => {
         expect(ruleList('1', runtime)).toEqual('one');
@@ -8823,7 +8746,7 @@
     });
 
     describe('fr', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return (((i == 0) || (i == 1)) ? 'one' : (((((e == 0 && i != 0) && i % 1000000 == 0) && v == 0) || !((Math.floor(e) === e) && (e >= 0) && (e <= 5))) ? 'many' : 'other')); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return (((i == 0) || (i == 1)) ? 'one' : (((((e == 0 && i != 0) && i % 1000000 == 0) && v == 0) || !((Math.floor(e) === e) && (e >= 0) && (e <= 5))) ? 'many' : 'other')); });
 
       it('one 0', () => {
         expect(ruleList('0', runtime)).toEqual('one');
@@ -9083,7 +9006,7 @@
     });
 
     describe('gd', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return (((n == 1) || (n == 11)) ? 'one' : (((n == 2) || (n == 12)) ? 'two' : ((((Math.floor(n) === n) && (n >= 3) && (n <= 10)) || ((Math.floor(n) === n) && (n >= 13) && (n <= 19))) ? 'few' : 'other'))); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return (((n == 1) || (n == 11)) ? 'one' : (((n == 2) || (n == 12)) ? 'two' : ((((Math.floor(n) === n) && (n >= 3) && (n <= 10)) || ((Math.floor(n) === n) && (n >= 13) && (n <= 19))) ? 'few' : 'other'))); });
 
       it('one 1', () => {
         expect(ruleList('1', runtime)).toEqual('one');
@@ -9364,7 +9287,7 @@
     });
 
     describe('sl', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return ((v == 0 && i % 100 == 1) ? 'one' : ((v == 0 && i % 100 == 2) ? 'two' : (((v == 0 && ((Math.floor(i % 100) === i % 100) && (i % 100 >= 3) && (i % 100 <= 4))) || v != 0) ? 'few' : 'other'))); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return ((v == 0 && i % 100 == 1) ? 'one' : ((v == 0 && i % 100 == 2) ? 'two' : (((v == 0 && ((Math.floor(i % 100) === i % 100) && (i % 100 >= 3) && (i % 100 <= 4))) || v != 0) ? 'few' : 'other'))); });
 
       it('one 1', () => {
         expect(ruleList('1', runtime)).toEqual('one');
@@ -9603,7 +9526,7 @@
     });
 
     describe('dsb/hsb', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return (((v == 0 && i % 100 == 1) || f % 100 == 1) ? 'one' : (((v == 0 && i % 100 == 2) || f % 100 == 2) ? 'two' : (((v == 0 && ((Math.floor(i % 100) === i % 100) && (i % 100 >= 3) && (i % 100 <= 4))) || ((Math.floor(f % 100) === f % 100) && (f % 100 >= 3) && (f % 100 <= 4))) ? 'few' : 'other'))); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return (((v == 0 && i % 100 == 1) || f % 100 == 1) ? 'one' : (((v == 0 && i % 100 == 2) || f % 100 == 2) ? 'two' : (((v == 0 && ((Math.floor(i % 100) === i % 100) && (i % 100 >= 3) && (i % 100 <= 4))) || ((Math.floor(f % 100) === f % 100) && (f % 100 >= 3) && (f % 100 <= 4))) ? 'few' : 'other'))); });
 
       it('one 1', () => {
         expect(ruleList('1', runtime)).toEqual('one');
@@ -9965,7 +9888,7 @@
     });
 
     describe('he/iw', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return ((i == 1 && v == 0) ? 'one' : ((i == 2 && v == 0) ? 'two' : (((v == 0 && !((Math.floor(n) === n) && (n >= 0) && (n <= 10))) && n % 10 == 0) ? 'many' : 'other'))); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return ((i == 1 && v == 0) ? 'one' : ((i == 2 && v == 0) ? 'two' : (((v == 0 && !((Math.floor(n) === n) && (n >= 0) && (n <= 10))) && n % 10 == 0) ? 'many' : 'other'))); });
 
       it('one 1', () => {
         expect(ruleList('1', runtime)).toEqual('one');
@@ -10135,7 +10058,7 @@
     });
 
     describe('cs/sk', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return ((i == 1 && v == 0) ? 'one' : ((((Math.floor(i) === i) && (i >= 2) && (i <= 4)) && v == 0) ? 'few' : (v != 0 ? 'many' : 'other'))); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return ((i == 1 && v == 0) ? 'one' : ((((Math.floor(i) === i) && (i >= 2) && (i <= 4)) && v == 0) ? 'few' : (v != 0 ? 'many' : 'other'))); });
 
       it('one 1', () => {
         expect(ruleList('1', runtime)).toEqual('one');
@@ -10281,7 +10204,7 @@
     });
 
     describe('pl', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return ((i == 1 && v == 0) ? 'one' : (((v == 0 && ((Math.floor(i % 10) === i % 10) && (i % 10 >= 2) && (i % 10 <= 4))) && !((Math.floor(i % 100) === i % 100) && (i % 100 >= 12) && (i % 100 <= 14))) ? 'few' : (((((v == 0 && i != 1) && ((Math.floor(i % 10) === i % 10) && (i % 10 >= 0) && (i % 10 <= 1))) || (v == 0 && ((Math.floor(i % 10) === i % 10) && (i % 10 >= 5) && (i % 10 <= 9)))) || (v == 0 && ((Math.floor(i % 100) === i % 100) && (i % 100 >= 12) && (i % 100 <= 14)))) ? 'many' : 'other'))); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return ((i == 1 && v == 0) ? 'one' : (((v == 0 && ((Math.floor(i % 10) === i % 10) && (i % 10 >= 2) && (i % 10 <= 4))) && !((Math.floor(i % 100) === i % 100) && (i % 100 >= 12) && (i % 100 <= 14))) ? 'few' : (((((v == 0 && i != 1) && ((Math.floor(i % 10) === i % 10) && (i % 10 >= 0) && (i % 10 <= 1))) || (v == 0 && ((Math.floor(i % 10) === i % 10) && (i % 10 >= 5) && (i % 10 <= 9)))) || (v == 0 && ((Math.floor(i % 100) === i % 100) && (i % 100 >= 12) && (i % 100 <= 14)))) ? 'many' : 'other'))); });
 
       it('one 1', () => {
         expect(ruleList('1', runtime)).toEqual('one');
@@ -10472,7 +10395,7 @@
     });
 
     describe('be', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return ((n % 10 == 1 && n % 100 != 11) ? 'one' : ((((Math.floor(n % 10) === n % 10) && (n % 10 >= 2) && (n % 10 <= 4)) && !((Math.floor(n % 100) === n % 100) && (n % 100 >= 12) && (n % 100 <= 14))) ? 'few' : (((n % 10 == 0 || ((Math.floor(n % 10) === n % 10) && (n % 10 >= 5) && (n % 10 <= 9))) || ((Math.floor(n % 100) === n % 100) && (n % 100 >= 11) && (n % 100 <= 14))) ? 'many' : 'other'))); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return ((n % 10 == 1 && n % 100 != 11) ? 'one' : ((((Math.floor(n % 10) === n % 10) && (n % 10 >= 2) && (n % 10 <= 4)) && !((Math.floor(n % 100) === n % 100) && (n % 100 >= 12) && (n % 100 <= 14))) ? 'few' : (((n % 10 == 0 || ((Math.floor(n % 10) === n % 10) && (n % 10 >= 5) && (n % 10 <= 9))) || ((Math.floor(n % 100) === n % 100) && (n % 100 >= 11) && (n % 100 <= 14))) ? 'many' : 'other'))); });
 
       it('one 1', () => {
         expect(ruleList('1', runtime)).toEqual('one');
@@ -10780,7 +10703,7 @@
     });
 
     describe('lt', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return ((n % 10 == 1 && !((Math.floor(n % 100) === n % 100) && (n % 100 >= 11) && (n % 100 <= 19))) ? 'one' : ((((Math.floor(n % 10) === n % 10) && (n % 10 >= 2) && (n % 10 <= 9)) && !((Math.floor(n % 100) === n % 100) && (n % 100 >= 11) && (n % 100 <= 19))) ? 'few' : (f != 0 ? 'many' : 'other'))); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return ((n % 10 == 1 && !((Math.floor(n % 100) === n % 100) && (n % 100 >= 11) && (n % 100 <= 19))) ? 'one' : ((((Math.floor(n % 10) === n % 10) && (n % 10 >= 2) && (n % 10 <= 9)) && !((Math.floor(n % 100) === n % 100) && (n % 100 >= 11) && (n % 100 <= 19))) ? 'few' : (f != 0 ? 'many' : 'other'))); });
 
       it('one 1', () => {
         expect(ruleList('1', runtime)).toEqual('one');
@@ -11091,7 +11014,7 @@
     });
 
     describe('mt', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return (n == 1 ? 'one' : ((n == 0 || ((Math.floor(n % 100) === n % 100) && (n % 100 >= 2) && (n % 100 <= 10))) ? 'few' : (((Math.floor(n % 100) === n % 100) && (n % 100 >= 11) && (n % 100 <= 19)) ? 'many' : 'other'))); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return (n == 1 ? 'one' : ((n == 0 || ((Math.floor(n % 100) === n % 100) && (n % 100 >= 2) && (n % 100 <= 10))) ? 'few' : (((Math.floor(n % 100) === n % 100) && (n % 100 >= 11) && (n % 100 <= 19)) ? 'many' : 'other'))); });
 
       it('one 1', () => {
         expect(ruleList('1', runtime)).toEqual('one');
@@ -11405,7 +11328,7 @@
     });
 
     describe('ru/uk', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return (((v == 0 && i % 10 == 1) && i % 100 != 11) ? 'one' : (((v == 0 && ((Math.floor(i % 10) === i % 10) && (i % 10 >= 2) && (i % 10 <= 4))) && !((Math.floor(i % 100) === i % 100) && (i % 100 >= 12) && (i % 100 <= 14))) ? 'few' : ((((v == 0 && i % 10 == 0) || (v == 0 && ((Math.floor(i % 10) === i % 10) && (i % 10 >= 5) && (i % 10 <= 9)))) || (v == 0 && ((Math.floor(i % 100) === i % 100) && (i % 100 >= 11) && (i % 100 <= 14)))) ? 'many' : 'other'))); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return (((v == 0 && i % 10 == 1) && i % 100 != 11) ? 'one' : (((v == 0 && ((Math.floor(i % 10) === i % 10) && (i % 10 >= 2) && (i % 10 <= 4))) && !((Math.floor(i % 100) === i % 100) && (i % 100 >= 12) && (i % 100 <= 14))) ? 'few' : ((((v == 0 && i % 10 == 0) || (v == 0 && ((Math.floor(i % 10) === i % 10) && (i % 10 >= 5) && (i % 10 <= 9)))) || (v == 0 && ((Math.floor(i % 100) === i % 100) && (i % 100 >= 11) && (i % 100 <= 14)))) ? 'many' : 'other'))); });
 
       it('one 1', () => {
         expect(ruleList('1', runtime)).toEqual('one');
@@ -11623,7 +11546,7 @@
     });
 
     describe('br', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return ((n % 10 == 1 && ((n % 100 != 11) && (n % 100 != 71) && (n % 100 != 91))) ? 'one' : ((n % 10 == 2 && ((n % 100 != 12) && (n % 100 != 72) && (n % 100 != 92))) ? 'two' : (((((Math.floor(n % 10) === n % 10) && (n % 10 >= 3) && (n % 10 <= 4)) || (n % 10 == 9)) && (!((Math.floor(n % 100) === n % 100) && (n % 100 >= 10) && (n % 100 <= 19)) && !((Math.floor(n % 100) === n % 100) && (n % 100 >= 70) && (n % 100 <= 79)) && !((Math.floor(n % 100) === n % 100) && (n % 100 >= 90) && (n % 100 <= 99)))) ? 'few' : ((n != 0 && n % 1000000 == 0) ? 'many' : 'other')))); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return ((n % 10 == 1 && ((n % 100 != 11) && (n % 100 != 71) && (n % 100 != 91))) ? 'one' : ((n % 10 == 2 && ((n % 100 != 12) && (n % 100 != 72) && (n % 100 != 92))) ? 'two' : (((((Math.floor(n % 10) === n % 10) && (n % 10 >= 3) && (n % 10 <= 4)) || (n % 10 == 9)) && (!((Math.floor(n % 100) === n % 100) && (n % 100 >= 10) && (n % 100 <= 19)) && !((Math.floor(n % 100) === n % 100) && (n % 100 >= 70) && (n % 100 <= 79)) && !((Math.floor(n % 100) === n % 100) && (n % 100 >= 90) && (n % 100 <= 99)))) ? 'few' : ((n != 0 && n % 1000000 == 0) ? 'many' : 'other')))); });
 
       it('one 1', () => {
         expect(ruleList('1', runtime)).toEqual('one');
@@ -11946,7 +11869,7 @@
     });
 
     describe('ga', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return (n == 1 ? 'one' : (n == 2 ? 'two' : (((Math.floor(n) === n) && (n >= 3) && (n <= 6)) ? 'few' : (((Math.floor(n) === n) && (n >= 7) && (n <= 10)) ? 'many' : 'other')))); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return (n == 1 ? 'one' : (n == 2 ? 'two' : (((Math.floor(n) === n) && (n >= 3) && (n <= 6)) ? 'few' : (((Math.floor(n) === n) && (n >= 7) && (n <= 10)) ? 'many' : 'other')))); });
 
       it('one 1', () => {
         expect(ruleList('1', runtime)).toEqual('one');
@@ -12230,7 +12153,7 @@
     });
 
     describe('gv', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return ((v == 0 && i % 10 == 1) ? 'one' : ((v == 0 && i % 10 == 2) ? 'two' : ((v == 0 && ((i % 100 == 0) || (i % 100 == 20) || (i % 100 == 40) || (i % 100 == 60) || (i % 100 == 80))) ? 'few' : (v != 0 ? 'many' : 'other')))); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return ((v == 0 && i % 10 == 1) ? 'one' : ((v == 0 && i % 10 == 2) ? 'two' : ((v == 0 && ((i % 100 == 0) || (i % 100 == 20) || (i % 100 == 40) || (i % 100 == 60) || (i % 100 == 80))) ? 'few' : (v != 0 ? 'many' : 'other')))); });
 
       it('one 1', () => {
         expect(ruleList('1', runtime)).toEqual('one');
@@ -12451,7 +12374,7 @@
     });
 
     describe('kw', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return (n == 0 ? 'zero' : (n == 1 ? 'one' : (((((n % 100 == 2) || (n % 100 == 22) || (n % 100 == 42) || (n % 100 == 62) || (n % 100 == 82)) || (n % 1000 == 0 && (((Math.floor(n % 100000) === n % 100000) && (n % 100000 >= 1000) && (n % 100000 <= 20000)) || (n % 100000 == 40000) || (n % 100000 == 60000) || (n % 100000 == 80000)))) || (n != 0 && n % 1000000 == 100000)) ? 'two' : (((n % 100 == 3) || (n % 100 == 23) || (n % 100 == 43) || (n % 100 == 63) || (n % 100 == 83)) ? 'few' : ((n != 1 && ((n % 100 == 1) || (n % 100 == 21) || (n % 100 == 41) || (n % 100 == 61) || (n % 100 == 81))) ? 'many' : 'other'))))); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return (n == 0 ? 'zero' : (n == 1 ? 'one' : (((((n % 100 == 2) || (n % 100 == 22) || (n % 100 == 42) || (n % 100 == 62) || (n % 100 == 82)) || (n % 1000 == 0 && (((Math.floor(n % 100000) === n % 100000) && (n % 100000 >= 1000) && (n % 100000 <= 20000)) || (n % 100000 == 40000) || (n % 100000 == 60000) || (n % 100000 == 80000)))) || (n != 0 && n % 1000000 == 100000)) ? 'two' : (((n % 100 == 3) || (n % 100 == 23) || (n % 100 == 43) || (n % 100 == 63) || (n % 100 == 83)) ? 'few' : ((n != 1 && ((n % 100 == 1) || (n % 100 == 21) || (n % 100 == 41) || (n % 100 == 61) || (n % 100 == 81))) ? 'many' : 'other'))))); });
 
       it('zero 0', () => {
         expect(ruleList('0', runtime)).toEqual('zero');
@@ -12777,7 +12700,7 @@
     });
 
     describe('ar/ars', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return (n == 0 ? 'zero' : (n == 1 ? 'one' : (n == 2 ? 'two' : (((Math.floor(n % 100) === n % 100) && (n % 100 >= 3) && (n % 100 <= 10)) ? 'few' : (((Math.floor(n % 100) === n % 100) && (n % 100 >= 11) && (n % 100 <= 99)) ? 'many' : 'other'))))); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return (n == 0 ? 'zero' : (n == 1 ? 'one' : (n == 2 ? 'two' : (((Math.floor(n % 100) === n % 100) && (n % 100 >= 3) && (n % 100 <= 10)) ? 'few' : (((Math.floor(n % 100) === n % 100) && (n % 100 >= 11) && (n % 100 <= 99)) ? 'many' : 'other'))))); });
 
       it('zero 0', () => {
         expect(ruleList('0', runtime)).toEqual('zero');
@@ -13118,7 +13041,7 @@
     });
 
     describe('cy', () => {
-      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var v = runtime.v(num); var w = runtime.w(num); var f = runtime.f(num); var t = runtime.t(num); return (n == 0 ? 'zero' : (n == 1 ? 'one' : (n == 2 ? 'two' : (n == 3 ? 'few' : (n == 6 ? 'many' : 'other'))))); });
+      const ruleList = (function(num, runtime) { var n = runtime.n(num); var i = runtime.i(num); var f = runtime.f(num); var t = runtime.t(num); var v = runtime.v(num); var w = runtime.w(num); var e = runtime.e(num); return (n == 0 ? 'zero' : (n == 1 ? 'one' : (n == 2 ? 'two' : (n == 3 ? 'few' : (n == 6 ? 'many' : 'other'))))); });
 
       it('zero 0', () => {
         expect(ruleList('0', runtime)).toEqual('zero');

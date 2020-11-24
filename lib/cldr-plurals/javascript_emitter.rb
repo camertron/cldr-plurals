@@ -4,7 +4,7 @@ module CldrPlurals
   class JavascriptEmitter < Compiler::Emitter
     class << self
 
-      RUNTIME_VARS = %w(n i v w f t)
+      RUNTIME_VARS = %w(n i f t v w e)
 
       def emit_rules(rule_list)
         parts = rule_list.rules.map do |rule|
@@ -20,7 +20,7 @@ module CldrPlurals
       end
 
       def emit_rule_standalone(rule)
-        "(function(n, i, f, t, v, w) { return #{emit_rule(rule)}; })"
+        "(function(#{RUNTIME_VARS.join(', ')}) { return #{emit_rule(rule)}; })"
       end
 
       protected

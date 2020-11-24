@@ -1,5 +1,5 @@
 .DS_Store
 Gemfile.lock
+package-lock.json
 pkg/
-tester.rb
-tester2.rb
+node_modules/

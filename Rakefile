@@ -8,7 +8,6 @@ require 'rubygems/package_task'
 
 require './lib/cldr-plurals'
 require './spec/samples'
-require 'cldr-plurals/javascript_runtime'
 
 Bundler::GemHelper.install_tasks
 
@@ -84,21 +83,14 @@ task :update_samples do
 end
 
 task :update_js_tests do
-  indented_source = CldrPlurals::JavascriptRuntime
-    .source
-    .split("\n")
-    .map { |line| "  #{line}" }
-    .join("\n")
-    .strip
-
   result = ''.tap do |js|
     js << "( () => {\n"
-    js << "  const runtime = #{indented_source}\n\n"
+    js << "  const runtime = require('cldr-plurals-runtime-js');\n\n"
     js << "  describe('javascript rules', () => {\n"
 
     Samples.each_rule.with_index do |(locales, rule, samples), rule_idx|
       js << "\n" if rule_idx > 0
-      js << "    describe('#{locales}', () => {\n"
+      js << "    describe('locales: #{locales}, rule: #{rule.name};', () => {\n"
       js << "      const rule = #{CldrPlurals::JavascriptEmitter.emit_rule_standalone(rule)};\n\n"
 
       samples.each_with_index do |sample_info, idx|
